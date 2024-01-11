@@ -1,0 +1,9 @@
+semester: Spring 2024
+home: assets/homework/
+homework:
+- name: Homework 1
+  due: 11:59pm Mon 1/22
+  url: M405s24_h1.pdf
+- name: Homework 2
+  due: 11:59pm Fri 9/15
+  url: MM405s24_h2.pdf
