@@ -1,0 +1,18 @@
+sidenavtitle: 'Math 405'
+
+docs:
+
+- title: Syllabus
+  url: assets/general/M405s24_syllabus.pdf  # rebuild by "make syllabus.pdf" in assets/general/
+
+- title: Schedule
+  exturl: https://docs.google.com/spreadsheets/d/e/2PACX-1vTG9Q9eXXitmiGHGyC4HhUJYlyQeFXYHtnsF2HQzneAoz_NapIEkrtOEFezhnBLzkgZ4Dr27bhFQf0I/pubhtml?gid=0&single=true
+  
+- title: Homework
+  url: homework.html
+
+- title: Exams
+  url: exam-page.html
+
+- title: LaTeX Help
+  exturl: https://jrfaudree.github.io/latex/latex.html
