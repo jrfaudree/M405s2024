@@ -1,0 +1,243 @@
+% !TEX TS-program = pdflatexmk
+\documentclass[12pt]{article}
+
+% Layout.
+\usepackage[top=.75in, bottom=0.75in, left=.75in, right=.75in, headheight=1in, headsep=6pt]{geometry}
+
+% Fonts.
+\usepackage{mathptmx}
+%\usepackage[scaled=0.86]{helvet}
+\renewcommand{\emph}[1]{\textsf{\textbf{#1}}}
+\renewcommand{\familydefault}{\sfdefault}
+%Syl adendum
+\usepackage[colorlinks = true,linkcolor = blue, urlcolor  = blue]{hyperref}
+\def\mailto#1{\href{mailto:#1}{#1}}
+
+% Misc packages.
+\usepackage{amsmath,amssymb,latexsym,multicol}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{tabularx,colortbl}
+\usepackage{enumitem}
+%to make tikz pics work
+\usepackage{tikz,pgfplots}
+
+\usepackage[colorlinks=true]{hyperref}
+
+% Paragraph spacing
+\parindent 0pt
+\parskip 6pt plus 1pt
+\def\tableindent{\hskip 0.5 in}
+\def\ts{\hskip 1.5 em}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+\lhead{\large\sf\textbf{MATH 405 }}
+\rhead{\large\sf\textbf{Spring 2024}}
+\chead{\large\sf\textbf{Abstract Algebra}}
+
+\newcommand{\localhead}[1]{\par\smallskip\textbf{#1}\nobreak\\}%
+\def\heading#1{\localhead{\large\emph{#1}}}
+\def\subheading#1{\localhead{\emph{#1}}}
+
+\newenvironment{clist}%
+{\bgroup\parskip 0pt\begin{list}{$\bullet$}{\partopsep 4pt\topsep 0pt\itemsep -2pt}}%
+{\end{list}\egroup}%
+
+\usetikzlibrary{calc}
+\pgfplotsset{my style/.append style={axis x line=middle, axis y line=
+middle, xlabel={$x$}, ylabel={$y$}, axis equal }}
+
+
+\begin{document}
+
+\textbf{\large{Essential Information}}
+
+\begin{tabular}{p{0.2\textwidth} p{0.7\textwidth}}
+{time \& place}:&TR 2:00-3:30 Chapman Hall Room 107 or by Zoom\\
+{instructor:} &Jill Faudree\\
+{contact details:} &Chapman 306B, jrfaudree@alaska.edu, 474-7385\\
+{office hours:} &(\textbf{tentative})  M 3:30-4:30 (office/zoom), T 3:45-4:45 (MathLab), Th 12:00-1:00 (office/zoom) and by appointment. Also, you are welcome to drop by.\\
+{textbook:}& \textbf{Abstract Algebra: Theory and Applications}, Thomas W. Judson\\
+{webpage:}& \url{https://jrfaudree.github.io/M405s2024/}\\
+canvas:&\url{https://canvas.alaska.edu/courses/18413}\\
+{prerequisites:} & MATH 265 Introduction to Proofs or permission of instructor.
+\end{tabular}
+
+
+
+\textbf{\large{Course Description}}
+
+The course description in the catalog reads as follows:
+\begin{quote} Theory of groups, rings, and fields. \end{quote}
+
+A beautiful description of the subject by Dr. Gordon Williams is below.
+
+\begin{quote}
+Abstract algebra is one of the great triumphs of 19th and 20th century mathematics. A great part of its beauty and its power derives from the simplicity of its underlying structures and the rich theory they have allowed us to develop. The tools of abstract algebra also play a vital role in the development of other areas of mathematics from number theory, to geometry and topology.
+
+Abstract algebra was largely developed as a method of understanding the structures that make many of the familiar computational methods of mathematics possible. Along the way it was realized that these structures are both deeper, more pervasive, more general and more powerful than might otherwise be expected. For example, a major motivating question for the development of the subject was to understand whether there were formulae similar to the quadratic formula for solving polynomial equations of degrees higher than two (the rather surprising answer is \emph{no} for degrees five and higher). However, many of the tools developed to answer questions like these turn out to have great importance in understanding the geometric symmetry of physical objects ranging from the classical Platonic solids such as the cube and octahedron to the classification of the structure of the lattices of atoms in crystals. The story doesn't end there either. There turn out to be a number of problems dating back to antiquity, such as whether or not there exists a straight edge and compasses construction for trisecting an arbitrary angle, that weren't able to be answered until the tools of abstract algebra were available.
+
+The primary objects of study in this course will be groups, rings and fields. Groups are the most basic of these, comprised only of a nonempty set with a binary relation obeying some simple axioms. Groups arise naturally in any subject where composition of functions or actions is studied, such as permutations, isometries or matrix operations. A ring is a group equipped with a second binary operation that is compatible with the group operation, a good example of a ring is the integers under addition (the group) with the additional operation being multiplication. Fields have the most structure --- and so are the most constrained --- of the basic objects we will be considering in this course, the most familiar examples being the real and complex numbers from analysis.
+
+This course will be comprised of an in-depth study of the theory of groups, rings and fields, and will include a discussion of a broad range of examples.
+\end{quote}
+
+\textbf{\large{Student Learning Outcomes}} A successful student in this course will:
+\begin{itemize}
+\item Develop fluency in the use of the vocabulary of modern algebra.
+\item Be able to perform basic computational skills involving groups, rings and fields.
+\item Provide examples of groups, rings and fields exhibiting particular properites.
+\item Apply important theorems and definitions in modern algebra to prove results.
+\item Develop fluency in writing formal mathematical proofs generally and in implementing proof techniques common in modern algebra specifically. 
+\end{itemize}
+
+{\textbf{\large{Course Mechanics}}}
+
+Class meetings will be a combination of lecture, whole class discussion, individual work, and small group work. At the end of each class, there will be an assigned \textbf{reading} from the text which is due the next class period. At some point in each class, you will take the \textbf{quiz-of-the-day} (aka QoD). Your first attempt will be on your own, then we will discuss at least some of the questions in small groups or as a class and you can re-submit your answers.
+
+Each week there will be a set of \textbf{homework problems} assigned. They will be do at midnight on the following Monday. Homework will be turned in on Canvas and should be typeset using \LaTeX.
+
+There will be three midterms and a comprehensive final exam.
+
+\begin{multicols}{2}
+\textbf{Grades} will be calculated according to the following rubric:
+
+
+\begin{tabular}{|l|c|}
+  \hline
+  % after \\: \hline or \cline{col1-col2} \cline{col3-col4} ...
+  homework & 20\% \\
+  QoD & 10\%\\
+  Midterm 1 & 10\%\\
+  Midterm 2 & 15\%\\
+  Midterm 3 & 20\%\\
+  final exam & 25\% \\
+  \hline
+\end{tabular}
+\end{multicols}
+Grade Bands: A, A- (90 - 100\%), B+,B, B- (80 - 89\%), C+, C, C- (70 - 79\%), D+, D, D-
+(60 - 69\%), F (0 - 59\%).  I reserve the right to lower the thresholds. The grade of $A+$ is reserved for outstanding performance in the course overall.\\
+
+{\textbf{\large{Quiz-of-the-Day}}}
+
+This will be taken on Canvas and will be graded on completion. You will know some of the questions in advance. Indeed, our textbook contains reading questions at the end of the section and some of these will appear on the QoD. The daily quizzes will aid our learning in several ways. First, it puts pressure on us to read the textbook. Second, it will provide a catalyst for class/small group discussion which itself helps us solidify our understanding. Finally, it is a place where we can test certain low-level skills like formal statements of definitions and theorems. As a general rule, low-stakes quizzing is one of the best ways to improve knowledge and retention of material.
+\newpage
+
+{\textbf{\large{Homework}}}
+
+Problems sets and due dates will appear on the course github page; solutions will appear on Canvas. Homework problems will be assigned weekly and will be due on Mondays. All homework will be turned in and returned online via Canvas. Students should use  \LaTeX \: to format their solutions.  Resources for using \LaTeX \: can be found on the  \href{https://jrfaudree.github.io/M663f23/}{github course site} and I am happy to help students troubleshoot getting it installed and using it.
+
+ \textbf{Collaboration} with your peers is strongly encouraged as is seeking help from your instructor. However, every student must write up their solutions independently. Homework will be graded on completion and the quality of the writing. As long as the work is your own and complete, you will earn full credit. In addition, I will provide feedback on your work.
+
+{\textbf{\large{Tests and Final Exam}}}
+
+There will be three midterms and a final. Each will be written without the aid of books, notes, or aids of any kind. There will be 1.5 hours to complete each midterm. The final will be cumulative and there will be 2 hours to complete it.
+
+The midterms are scheduled for Thursday 8 February, Thursday 7 March, Thursday 11 April. The final exam is scheduled for Thursday 2 May. Students enrolled in the asynchronous sections will have an additional day to schedule the midterm and final.
+
+\heading{Office Hours and Communication}
+My Weekly Schedule including office hours are available and updated \href{https://docs.google.com/spreadsheets/d/e/2PACX-1vRhaXnUrTdqObpUN21MDpirpEBAEBPnD4c3LFUqLrP4Rx4NrqHoW0YSGfzS75CE6Af6ndjNiO9H8EPg/pubhtml?gid=0&single=true}{\texttt{online}}.  Students can also schedule meetings with me outside of regular office hours, or mail me at \href{mailto:jrfaudree@alaska.edu}{\texttt{jrfaudree\@@alaska.edu}}.
+
+I will use Canvas to send announcements.  If I need to contact you outside of class times, I'll try to email via Canvas.  Please set the email address in Canvas to one that you check regularly!
+
+
+%\begin{table}\caption{(tentative) Schedule of Topics}
+
+\begin{center}
+\textbf{(tentative) Schedule of Topics}\\
+
+\begin{tabular}{c | c || c}
+week & dates &topics \\
+\hline \hline
+1& 1/16 \& 1/18 &Ch 1 and 2\\ \hline
+2& 1/23 \& 1/25& Ch 3 and 4\\ \hline
+3& 1/30 \& 2/1 & Ch 4 and 5\\ \hline
+4& 2/6 \& 2/8 & clean-up, Review, Midterm 1\\ \hline
+5& 2/13 \& 2/15& Ch 6 and Ch 9 \\ \hline
+6& 2/20 \& 2/22& Ch 9 and Ch 10 \\ \hline
+7& 2/27 \& 2/29& Ch 10 and Ch 11 \\ \hline
+8& 3/5 \& 3/7& clean-up, Review, Midterm 2\\ \hline
+9& 3/12 \& 3/14 &Spring Break\\ \hline
+10& 3/19 \& 3/21& Ch 13 and Ch 14  \\ \hline
+11& 3/26 \& 3/28& Ch 14 and Ch 16 \\ \hline
+12& 4/2 \& 4/4& Ch 17 and Ch 18\\ \hline
+13& 4/9 \& 4/11&clean-up, Review, Midterm 3\\ \hline
+14& 4/16 \& 4/18&Ch 20 and Ch 22\\ \hline
+15& 4/23 \& 4/25&Ch 21, Review\\ \hline
+16& 5/2& Final Exam, Thursday, 1:00-3:00\\ 
+\end{tabular}
+\end{center}
+
+\newpage
+
+
+\textbf{Miscellaneous Other Issues:}
+
+\textbf{Incomplete Grade} 
+Incomplete (I) will only be given in DMS courses in cases where the student has completed the majority (normally all but the last three weeks) of a course with a grade of C or better, but for personal reasons beyond his/her control has been unable to complete the course during the regular term. Negligence or indifference are not acceptable reasons for the granting of an incomplete grade. 
+
+\textbf{Late Withdrawals} 
+A withdrawal after the deadline (currently 9 weeks into the semester) from a DMS course will normally be granted only in cases where the student is performing satisfactorily (i.e., C or better) in a course, but has exceptional reasons, beyond his/her control, for being unable to complete the course. These exceptional reasons should be detailed in writing to the instructor, department head and dean.
+
+\textbf{Academic Dishonesty}
+Academic dishonesty, including cheating and plagiarism, will not
+be tolerated.  It is a violation of the Student Code of Conduct
+and will be punished according to UAF procedures.\\
+
+\textbf{The Use of AI Software}
+Using a tool like ChatGPT to solve homework problems is not that much different from talking to a classmate or searching for an answer using Google. You will get a response which may or may not be correct. The same rules apply to AI as to any kind of collaboration: You must write your solution independently. To copy and paste an answer from a friend, a book, or an online source would constitute a violation of academic integrity, but more important, it is self-defeating.
+
+\hfill
+
+\textbf{\large{Official UAF Syllabus Addendum}}
+ 
+\hfill
+
+\noindent{\bf COVID-19 statement:} Students should keep up-to-date on the university's policies, practices, and mandates related to COVID-19 by regularly checking this website: \url{https://sites.google.com/alaska.edu/coronavirus/uaf?authuser=0}
+
+Further, students are expected to adhere to the university's policies, practices, and mandates and are subject to disciplinary actions if they do not comply.
+
+\noindent{\bf Student protections statement:} UAF embraces and grows a culture of respect, diversity, inclusion, and caring. Students at this university are protected against sexual harassment and discrimination (Title IX). Faculty members are designated as responsible employees which means they are required to report sexual misconduct. Graduate teaching assistants do not share the same reporting obligations. For more information on your rights as a student and the resources available to you to resolve problems, please go to the following site: \url{https://catalog.uaf.edu/academics-regulations/students-rights-responsibilities/}.
+
+\noindent{\bf Disability services statement:} I will work with the Office of Disability Services to provide reasonable accommodation to students with disabilities.
+
+\noindent{\bf Student Academic Support:}
+\begin{itemize}
+\setlength\itemsep{0em}
+        \item Speaking Center (907-474-5470,
+        \mailto{uaf-speakingcenter@alaska.edu}, Gruening 507)
+\item Writing Center (907-474-5314, \mailto{uaf-writing-center@alaska.edu}, Gruening 8th floor)
+\item UAF Math Services, \mailto{uafmathstatlab@gmail.com}, Chapman Building (for math fee paying students only)
+\item Developmental Math Lab, Gruening 406
+\item The Debbie Moses Learning Center at CTC (907-455-2860, 604 Barnette St, Room 120,\\ \mailto{https://www.ctc.uaf.edu/student-services/student-success-center/})
+\item For more information and resources, please see the Academic Advising Resource List (\url{https://www.uaf.edu/advising/lr/SKM_364e19011717281.pdf})
+\end{itemize}
+
+\noindent{\bf Student Resources:}
+\begin{itemize}
+\setlength\itemsep{0em}
+\item Disability Services (907-474-5655, \mailto{uaf-disability-services@alaska.edu}, Whitaker 208)
+\item Student Health \& Counseling [6 free counseling sessions] (907-474-7043, \url{https://www.uaf.edu/chc/appointments.php}, Whitaker 203)
+\item Center for Student Rights and Responsibilities (907-474-7317, \mailto{uaf-studentrights@alaska.edu}, Eielson 110)
+\item Associated Students of the University of Alaska Fairbanks (ASUAF) or ASUAF Student Government (907-474-7355, \mailto{asuaf.office@alaska.edu}{asuaf.office@alaska.edu}, Wood Center 119)
+\end{itemize}
+
+\noindent{\bf ASUAF advocacy statement} 
+The Associated Students of the University of Alaska Fairbanks, the student government of UAF, offers advocacy services to students who feel they are facing issues with staff, faculty, and/or other students specifically if these issues are hindering the ability of the student to succeed in their academics or go about their lives at the university. Students who wish to utilize these services can contact the Student Advocacy Director by visiting the ASUAF office or emailing \mailto{asuaf.office@alaska.edu}{asuaf.office@alaska.edu}
+
+\noindent{\bf Nondiscrimination statement:}
+The University of Alaska is an affirmative action/equal opportunity employer and educational institution. The University of Alaska does not discriminate on the basis of race, religion, color, national origin, citizenship, age, sex, physical or mental disability, status as a protected veteran, marital status, changes in marital status, pregnancy, childbirth or related medical conditions, parenthood, sexual orientation, gender identity, political affiliation or belief, genetic information, or other legally protected status. The University's commitment to nondiscrimination, including against sex discrimination, applies to students, employees, and applicants for admission and employment. Contact information, applicable laws, and complaint procedures are included on UA's statement of nondiscrimination available at www.alaska.edu/nondiscrimination. For more information, contact:
+
+\begin{tabular}{l}
+UAF Department of Equity and Compliance\\
+1760 Tanana Loop, 355 Duckering Building, Fairbanks, AK  99775\\
+907-474-7300\\
+\mailto{uaf-deo@alaska.edu}
+\end{tabular}
+
+ \scriptsize syllabus version: \today \normalsize
+
+\end{document}
