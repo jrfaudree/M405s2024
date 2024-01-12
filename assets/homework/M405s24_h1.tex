@@ -1,0 +1,127 @@
+% !TEX TS-program = pdflatexmk
+\documentclass[12pt]{article}
+
+% Layout.
+\usepackage[top=.75in, bottom=0.75in, left=.75in, right=.75in, headheight=1in, headsep=6pt]{geometry}
+
+% Fonts.
+\usepackage{mathptmx}
+\usepackage[scaled=0.86]{helvet}
+\renewcommand{\emph}[1]{\textsf{\textbf{#1}}}
+
+% Misc packages.
+\usepackage{amsmath,amssymb,latexsym}
+\usepackage{graphicx,tikz}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{tabularx,colortbl}
+\usepackage{enumitem}
+%to make tikz pics work
+\usepackage{tikz,pgfplots}
+\usetikzlibrary{arrows}
+\newcommand{\midarrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+
+\usepackage[colorlinks=true]{hyperref}
+
+% Paragraph spacing
+\parindent 0pt
+\parskip 6pt plus 1pt
+\def\tableindent{\hskip 0.5 in}
+\def\ts{\hskip 1.5 em}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+\lhead{\large\sf\textbf{MATH 405}}
+\rhead{\large\sf\textbf{Spring 2024}}
+\chead{\large\sf\textbf{HW 1 }}
+
+\newcommand{\localhead}[1]{\par\smallskip\textbf{#1}\nobreak\\}%
+\def\heading#1{\localhead{\large\emph{#1}}}
+\def\subheading#1{\localhead{\emph{#1}}}
+
+%% Special Math Symbol shortcuts
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\rad}{\text{rad}}
+\newcommand{\diam}{\text{diam}}
+
+\usetikzlibrary{calc,arrows.meta}
+\usetikzlibrary{arrows}
+\newcommand{\marrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+
+
+\begin{document}
+
+\textbf{Observe} that the document has spaced out the problems so that there space for comments.\\
+
+Chapter 1 Problems\\
+
+\begin{enumerate}
+	\item Prove the second part of Theorem 1.3 DeMorgan's Laws rewritten below.\\
+	
+	Let $A$ and $B$ be sets. Then, $(A \cap B)'=A' \cup B'.$
+	
+\vspace{.3in}
+
+\textbf{Proof:} Your proof goes here.
+	
+	
+\vspace{3in}
+	
+	\item Let $A$, $B$, and $C$ be sets. Prove that $A \cap (B\backslash C) = (A \cap B)\backslash(A \cap C).$
+	
+\vspace{.3in}
+
+\textbf{Proof:} Your proof goes here.
+	
+	\vspace{3in}
+
+\item 
+	\begin{enumerate}
+	\item Define a function $f: \bbN \to \bbN$ that is one-to-one but not onto.
+	
+	\vspace{0.3in}
+	
+	\textbf{Example:} 
+	
+	\vspace{3in}
+	
+	\item Define a function $f: \bbN \to \bbN$ that is onto but not one-to-one.
+	
+	\vspace{0.3in}
+	
+	\textbf{Example:} 
+	
+	\vspace{3in}
+	\end{enumerate}
+	
+\item A relation on $\bbZ \backslash \{0\}$ is defined as $a \sim b$ if $ab >0.$
+	\begin{enumerate}
+	\item Prove the relation is an equivalence relation.
+	
+	\vspace{0.3in}
+	
+	\textbf{Proof:} 
+	
+	\vspace{3in}
+	
+	\item Describe the equivalence classes.
+	
+	\vspace{0.3in}
+	
+	\textbf{Answer:} 
+	
+	\vspace{3in}
+	\end{enumerate}
+\item Define a relation on $\bbR^2$ by stating that $(a,b) \sim (c,d)$ if and only if $a^2+b^2 \leq c^2+d^2.$ Show that the relation is reflexive and transitive but not symmetric.
+
+\vspace{0.3in}
+	
+	\textbf{Answer:} 
+	
+	\vspace{3in}
+
+\end{enumerate}
+\end{document}
