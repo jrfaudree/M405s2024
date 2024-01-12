@@ -17,3 +17,4 @@ Log in to [Canvas at UAF](https://canvas.alaska.edu/courses) for:
   * grades
   * solutions to Homework
 
+[<img src="assets/images/GitHub-Mark-32px.png" align="right">](https://github.com/jrfaudree/M405s2024 "github repository for this site")
