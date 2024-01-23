@@ -1,0 +1,143 @@
+% !TEX TS-program = pdflatexmk
+\documentclass[12pt]{article}
+
+% Layout.
+\usepackage[top=.75in, bottom=0.75in, left=.75in, right=.75in, headheight=1in, headsep=6pt]{geometry}
+
+% Fonts.
+\usepackage{mathptmx}
+\usepackage[scaled=0.86]{helvet}
+\renewcommand{\emph}[1]{\textsf{\textbf{#1}}}
+
+% Misc packages.
+\usepackage{amsmath,amssymb,latexsym}
+\usepackage{graphicx,tikz}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{tabularx,colortbl}
+\usepackage{enumitem}
+%to make tikz pics work
+\usepackage{tikz,pgfplots}
+\usetikzlibrary{arrows}
+\newcommand{\midarrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+
+\usepackage[colorlinks=true]{hyperref}
+
+% Paragraph spacing
+\parindent 0pt
+\parskip 6pt plus 1pt
+\def\tableindent{\hskip 0.5 in}
+\def\ts{\hskip 1.5 em}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+\lhead{\large\sf\textbf{MATH 405}}
+\rhead{\large\sf\textbf{Spring 2024}}
+\chead{\large\sf\textbf{HW 2 }}
+
+\newcommand{\localhead}[1]{\par\smallskip\textbf{#1}\nobreak\\}%
+\def\heading#1{\localhead{\large\emph{#1}}}
+\def\subheading#1{\localhead{\emph{#1}}}
+
+%% Special Math Symbol shortcuts
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\rad}{\text{rad}}
+\newcommand{\diam}{\text{diam}}
+
+\usetikzlibrary{calc,arrows.meta}
+\usetikzlibrary{arrows}
+\newcommand{\marrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+
+
+\begin{document}
+
+\textbf{Observe} that the document has spaced out the problems so that there space for comments.\\
+
+Chapter 2 Problems\\
+
+\begin{enumerate}
+\item Use Proof by Induction to prove the statement below.\\
+
+\begin{quote} For all $n \in \bbN,$ $\displaystyle \frac{1}{2}+\frac{1}{6}+ \cdots + \frac{1}{n(n+1)}=\frac{n}{n+1}.$ \end{quote}
+
+\textbf{Proof:} Your proof goes here.
+
+\newpage
+
+\item For $a=23771$ and $b=19945$, calculate $gcd(a,b)$ and find integers $s$ and $t$ such that 
+$$as+bt=gcd(a,b).$$
+
+\textbf{Answer:} Your answer goes here.
+
+\newpage
+
+\item Suppose that $a$ and $b$ are integers such that $gcd(a,b)=1.$ Let $s$ and $t$ be integers such that $as+bt=1.$ Prove that $gcd(a,s)=gcd(r,b)=gcd(s,t)=1.$\\
+
+\textbf{Proof:} Your proof goes here.
+
+\newpage
+
+\item Let $a,b,c \in \bbN.$ Prove that if $gcd(a,b)=1$ and $a \: | \: bc,$ then $a \: | \: c.$\\
+
+\textbf{Proof:} Your proof goes here.
+
+\newpage
+
+Chapter 3 Problems
+
+\item This question is about the symmetries of a \emph{square}, as opposed to the example of the rectangle at the beginning of this section. You may want to use a drawing or permutations to describe your ideas but you don't have to. It's OK to have essay-style answers.\\
+
+\begin{tikzpicture}[scale=1.5]
+\draw (0,0) -- (1,0) -- (1,1) -- (0,1) -- (0,0);
+\node at (-.25,-.25){$A$};
+\node at (-.25,1.25){$B$};
+\node at (1.25,1.25){$C$};
+\node at (1.25,-.25){$D$};
+\end{tikzpicture}
+
+	\begin{enumerate}
+	\item Describe the symmetries of the square.\\
+	\textbf{Answer:} Your answer goes here.
+	\vfill
+	\item  How many symmetries of the square are there?\\
+	\textbf{Answer:} Your answer goes here. It's going to be just a number!
+	\vfill
+	\item  How many permutations of the set $\{A,B,C,D\}$ are there?\\
+	\textbf{Answer:} Your answer goes here. It's going to be just a number! A little explanation of your reasoning here never hurts!
+	\vfill
+	\item  Give an example of a permutation of the set $\{A,B,C,D\}$ that cannot correspond to a symmetry of the square pictured above?\\
+	\textbf{Answer:} Your answer goes here. Justify your answer
+		\vfill
+	\end{enumerate}
+\newpage	
+\item Let $S=\bbR \backslash \{-1\}$ and define a binary operation $*$ by $a * b =a+b+ab.$ Prove that $(S,*)$ is an abelian group.\\
+
+\textbf{Proof:} Your proof goes here.
+
+\newpage
+
+\item Give an example of two elements $A$ and $B$ in $GL_2(\bbR)$ with $AB \not = BA.$ \\
+
+\textbf{Answer:} Your answer goes here.
+
+\newpage
+
+\item Given the groups $\bbR^*$ and $\bbZ$, let $G=\bbR^* \times \bbZ.$ Define a binary operation $\circ$ on $G$ by $(a,m) \circ (b,n)=(ab,m+n).$ Prove that $(G,\circ)$ is a group.
+
+\textbf{Proof:} Your proof goes here.
+
+\newpage
+
+\item Let $(G,\circ)$ be a group. Let $g_1,g_2, \cdots, g_n \in G.$ Show that the inverse of $g_1g_2\cdots g_n$ is $g_n^{-1}\cdots g_2^{-1}g_1^{-1}.$\\
+
+\textbf{Proof:} Your proof goes here.
+
+
+\newpage
+
+
+\end{enumerate}
+\end{document}
