@@ -1,0 +1,148 @@
+% !TEX TS-program = pdflatexmk
+\documentclass[12pt]{article}
+
+% Layout.
+\usepackage[top=.75in, bottom=0.75in, left=.75in, right=.75in, headheight=1in, headsep=6pt]{geometry}
+
+% Fonts.
+\usepackage{mathptmx}
+\usepackage[scaled=0.86]{helvet}
+\renewcommand{\emph}[1]{\textsf{\textbf{#1}}}
+
+% Misc packages.
+\usepackage{amsmath,amssymb,latexsym}
+\usepackage{graphicx,tikz}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{tabularx,colortbl}
+\usepackage{enumitem}
+%to make tikz pics work
+\usepackage{tikz,pgfplots}
+\usetikzlibrary{arrows}
+\newcommand{\midarrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+
+\usepackage[colorlinks=true]{hyperref}
+
+% Paragraph spacing
+\parindent 0pt
+\parskip 6pt plus 1pt
+\def\tableindent{\hskip 0.5 in}
+\def\ts{\hskip 1.5 em}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+\lhead{\large\sf\textbf{MATH 405}}
+\rhead{\large\sf\textbf{Spring 2024}}
+\chead{\large\sf\textbf{HW 3 }}
+
+\newcommand{\localhead}[1]{\par\smallskip\textbf{#1}\nobreak\\}%
+\def\heading#1{\localhead{\large\emph{#1}}}
+\def\subheading#1{\localhead{\emph{#1}}}
+
+%% Special Math Symbol shortcuts
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbQ}{\mathbb{Q}}
+
+\newcommand{\rad}{\text{rad}}
+\newcommand{\diam}{\text{diam}}
+
+\usetikzlibrary{calc,arrows.meta}
+\usetikzlibrary{arrows}
+\newcommand{\marrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+
+
+\begin{document}
+
+\textbf{Observe} that the document has spaced out the problems so that there space for comments.\\
+
+Chapter 3 Problems\\
+
+\begin{enumerate}
+\item Prove the right and left cancellation laws for a group $G,$ stated formally below.
+
+\begin{quote} Let $G$ be a group and suppose $a,b,c \in G.$
+\begin{itemize}
+\item Prove that if $ab=ac,$ then $b=c.$
+\item Prove that if $ba=ca,$ then $b=a.$
+\end{itemize}
+\end{quote}
+
+\textbf{Proof:}
+
+\newpage
+
+\item Let $G$ be a group and suppose that for every $a,b \in G,$ $(ab)^2=a^2b^2.$ Prove that $G$ must be abelian.\\
+
+\textbf{Proof:}
+\newpage
+
+\item List all the subgroups of the symmetry group of an equilateral triangle.
+
+\textbf{List:}
+\newpage
+
+Chapter 4 Problems
+
+\item All questions below are about $U(10),$ the group of units of $\bbZ_{10}.$ (Recall that the definition of $U(n)$ and an example $U(8)$ are on page 43 of our text.)
+\begin{enumerate}
+	\item List the elements of $U(10).$\\
+	\textbf{List:} \\
+	\item Show that $U(10)$ is cyclic.\\
+	\textbf{Answer:} \\
+	\item Find all generators of $U(10).$\\
+	\textbf{Answer:} \\
+	\item Find an element $a \in U(10),$ such that $a \not = 1$ and $a^2=1.$\\
+	\textbf{Answer:} \\
+	\item Prove that there always exists some $a \in U(n)$ such that $a \not = 1$ and $a^2=1.$\\
+	\textbf{Proof:} \\
+\end{enumerate}
+\newpage
+
+\item Prove or disprove the following statements. 
+	\begin{enumerate}
+	\item All the generators of $\bbZ_{60}$ are prime.\\
+	\textbf{Answer:} \\
+	\item $U(8)$ is cyclic.\\
+	\textbf{Answer:} \\
+	\item $(\bbQ,+)$ is cyclic.\\
+	\textbf{Answer:} \\
+	\item If every proper subgroup of a group $G$ is cyclic, then $G$ itself must be cyclic.\\
+	\textbf{Answer:} \\
+	\item If the group $G$ has a finite number of subgroups, then $G$ is finite.\\
+	\textbf{Answer:} \\
+	\end{enumerate}
+\newpage
+\item Observe that $A=\begin{bmatrix}0&1\\-1&0\end{bmatrix}$ and $B=\begin{bmatrix}0&-1\\1&-1\end{bmatrix}$ are elements of $GL_2(\bbR).$ Find $|A|,$ $|B|$ and $|AB|.$\\
+
+ (You are strongly encouraged to use technology here!) \\
+ 
+ What curious thing do you observe?\\
+
+\textbf{Answer:} \\
+
+\newpage
+
+\item Prove that if $p$ is prime, then $\bbZ_p$ has no nontrivial, proper subgroups.
+
+\textbf{Proof:} \\
+
+\newpage
+
+\item Let $\sigma=(1 \: 4 \: 3 \: 7\: 6)$ and $\tau=(1\: 5 \: 6)(2 \: 3 \: 4).$
+	\begin{enumerate}
+	\item Express $\sigma \tau$  and $\tau \sigma$ as a cycle or a product of disjoint cycles. \\
+	\textbf{Answer:} \\
+	\item Express $\sigma$ and $\tau$ as a product of transpositions and identify each as even or odd.
+	\textbf{Answer:} \\
+	\item Find $\sigma^{-1}$. Write is as a cycle or a disjoint product of cycles.
+	\textbf{Answer:} \\
+	\item Explain why any permutation of $\sigma \in S_n$ can be written as the product of at most $n-1$ transpositions.
+	\textbf{Answer:} \\
+	\end{enumerate}
+\newpage
+\item Show that $A_{10}$ contains an element of order 15. (Note that it is not enough to find such an element. You need to both be certain it is in $A_{10}$ and demonstrate how you know its order.)
+\end{enumerate}
+\end{document}
