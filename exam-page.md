@@ -8,7 +8,7 @@ Links to exams (old and new) will be posted here.
 ## Current Exams
 
 - Midterm 1
-  - [review](assets/tests/M405s2024_M1-review.pdf)
+  - [review](assets/tests/M405s24_m1_rev.pdf)
   - [blank](assets/tests/M405s2024_M1.pdf)
   - [solutions](assets/tests/M405s2024_M1-s.pdf)
  
