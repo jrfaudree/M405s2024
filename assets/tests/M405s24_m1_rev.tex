@@ -1,0 +1,153 @@
+% !TEX TS-program = pdflatexmk
+\documentclass[12pt]{article}
+
+% Layout.
+\usepackage[top=.75in, bottom=0.75in, left=.75in, right=.75in, headheight=1in, headsep=6pt]{geometry}
+
+% Fonts.
+\usepackage{mathptmx}
+\usepackage[scaled=0.86]{helvet}
+\renewcommand{\emph}[1]{\textsf{\textbf{#1}}}
+
+% Misc packages.
+\usepackage{amsmath,amssymb,latexsym}
+\usepackage{graphicx,tikz}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{tabularx,colortbl}
+\usepackage{enumitem}
+%to make tikz pics work
+\usepackage{tikz,pgfplots}
+\usetikzlibrary{arrows}
+\newcommand{\midarrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+
+\usepackage[colorlinks=true]{hyperref}
+
+% Paragraph spacing
+\parindent 0pt
+\parskip 6pt plus 1pt
+\def\tableindent{\hskip 0.5 in}
+\def\ts{\hskip 1.5 em}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+\lhead{\large\sf\textbf{MATH 405}}
+\rhead{\large\sf\textbf{Spring 2024}}
+\chead{\large\sf\textbf{Midterm 1 Review }}
+
+\newcommand{\localhead}[1]{\par\smallskip\textbf{#1}\nobreak\\}%
+\def\heading#1{\localhead{\large\emph{#1}}}
+\def\subheading#1{\localhead{\emph{#1}}}
+
+%% Special Math Symbol shortcuts
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbQ}{\mathbb{Q}}
+
+\newcommand{\rad}{\text{rad}}
+\newcommand{\diam}{\text{diam}}
+\newcommand{\divs}{\, \big | \,}
+
+\usetikzlibrary{calc,arrows.meta}
+\usetikzlibrary{arrows}
+\newcommand{\marrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+
+
+\begin{document}
+\textbf{Logistics:} Midterm I will be Thursday February 8 from 2:00-3:30 for in-person students. For remote students, it will be on either Thursday February 8 or Friday February 9. No notes, books or other aids.\\
+
+\textbf{Reminders:}
+\begin{enumerate}
+	\item Know the \textbf{formal definition}. Intuitive definitions are important for understanding but proofs require the use of the formal definition. If you are unsure of the formal definition, ask; don't guess.
+	\item All proofs should be formal and adhere to the same expectations as your written homework including the use of complete sentences, a clear beginning and conclusion, and appropriate use of symbols.
+	\item Unless explicitly stated otherwise, all answers require a rigorous explanation.
+	\item The emphasis will be on Chapters 3,4 and 5.
+\end{enumerate}
+
+\textbf{Topics:}\\
+
+\noindent \textbf{Chapter 1}\\
+
+\textbf{Definitions:} equivalence relations, equivalence classes, set operations (intersections, unions, difference, Cartesian product, relations, functions, domain, range, image, one-to-one/injective, onto/surjective, bijective
+
+
+\noindent \textbf{Chapter 2}\\
+
+\textbf{Definitions:} greatest common divisor, least common multiple, relatively prime, Euclidean algorithm, prime number, composite number
+
+\textbf{Notation:} $gcd(m,n)$
+
+\textbf{Results:}
+\begin{itemize}
+	\item Proof by mathematical induction.
+	\item (Thm 2.9 The Division Algorithm) For every $a,b \in \bbZ$ such that $b >0$ there exist unique $q,r \in \bbZ,$ such that $a=qb+r$ where $0 \leq r <b.$
+	\item (Lemma 2.13) Suppose $a,b \in \bbZ$ and $p$ is a prime. If $p \divs ab$ then $p \divs a$ ore $p \divs b.$
+	\item (Thm 2.15) The prime factorization of an integer is unique up to the order of the primes.
+\end{itemize}
+
+\noindent \textbf{Chapter 3}\\
+
+\textbf{Definitions:} binary operation, associativity, identity, inverse, commutativity, group, order of a group, group of symmetries of an object, addition and multiplication modulo $n$, group of units, general linear group, subgroup, proper subgroup, trivial subgroup
+
+\textbf{Notation:} $(\bbZ,+)$ and with $\bbR,\bbQ,$  $(\bbZ_n,+)$, $(U(n), \cdot )$, $GL_n(\bbR)$, $|G|$, $SL_2(\bbR)$
+
+\textbf{Results:}
+\begin{itemize}
+	\item If $G$ is a group, then
+		\begin{itemize}
+		\item (Prop 3.17) the identity is unique.
+		\item (Prop 3.18) $\forall a \in G,$ $a^{-1}$ is unique.
+		\item (Props 3.19 and 3.20) $\forall a,b \in G,$ $(ab)^{-1}=b^{-1}a^{-1}$ and $(a^{-1})^{-1}=a.$
+		\item (Prop 3.21) $\forall a,b \in G,$ equation $ax=b$ and $xa=b$ have unique solutions.
+		\item (Prop 3.22) $\forall a,b \in G,$ both equations $ab=ac$ and $ba=ca$ imply $b=c.$
+		\end{itemize}
+	\item (Thm 3.23) We can use the usual laws of exponents when manipulating repeated group operations on a single element. Specifically, if $g,h \in G$ a group and $m,n \in \bbZ,$ then
+		\begin{itemize}
+		\item $g^mg^n=g^{m+n}$
+		\item $(g^m)^n=g^{mn}$
+		\item $(gh)^n=((gh)^{-1})^{-n}=(h^{-1}g^{-1})^{-n}$
+		\end{itemize}
+	\item $H$ is a subgroup of $G$ if and only if
+		\begin{itemize}
+		\item (Prop 3.30) (i) $e \in H,$ (ii) $h_1h_2 \in H$ for every $h_1,h_2 \in H,$ and (iii) $h^{-1} \in H$ for every $h \in H.$
+		\item (Prop 3.31) (i) $H \not= \emptyset$ and (ii)$gh^{-1} \in H$ for every $g,h \in H.$
+		\end{itemize}
+\end{itemize}
+
+\noindent \textbf{Chapter 4}\\
+
+\textbf{Definitions:} Cyclic group, cyclic subgroup, generator of a group, cyclic subgroup generated by $a$, order of an element of a group,
+
+\textbf{Notation:} $\langle a \rangle$, $|b|,$ $n \bbZ$
+
+\textbf{Results:}
+\begin{itemize}
+	\item (Thm 4.9) Cyclic groups are abelian.
+	\item (Thm 4.10) Every subgroup of a cyclic group is cyclic.
+	\item (Prop 4.12) If $G=\langle a \rangle$ of order $n$, then $a^k=e$ if and only of $n \divs k.$
+	\item (Thm 4.13)  If $G=\langle a \rangle$ of order $n$ and $b=a^\ell \in G$, then $|b|=\frac{n}{d}$ where $d=gcd(n,\ell).$
+	\item (Cor 4.11 of Prop 4.12) The subgroups of $(\bbZ,+)$ are $\langle 1 \rangle=\bbZ, \, \langle 2 \rangle=2\bbZ, \, \langle 3 \rangle=3\bbZ, \cdots.$
+	\item  (Cor 4.14 of Thm 4.13) Suppose $1 \leq r < n.$ Then,
+	$\bbZ_n=\langle r \rangle$ if and only if $gcd(n,r).$
+\end{itemize}
+
+
+
+\noindent \textbf{Chapter 5 Section 1}\\
+
+\textbf{Definitions} permutation, the symmetric group on $n$ letters, a permutation group, disjoint cycles, transposition, even/odd permutation, length of a permutation.
+
+\textbf{Notation:} $S_X$, $S_n$, permutation notation including disjoint cycle notation and transposition representation,
+
+\textbf{Results}
+\begin{itemize}
+	\item (Thm 5.1)The set of all permutations of the set $X$ under function composition is a group.
+	\item (Prop 5.8) Disjoint cycles permute.
+	\item (Thm 5.9) Every permutation can be written as a product of disjoint cycles.
+	\item (Prop 5.12) Any permutation of a finite set can be written as a product of transpositions, provided the set has at least two elements.
+	\item (Thm 5.15) For every permutation $\sigma,$ the parity (even or odd) of the number of transpositions in any transposition representation of $\sigma$ is fixed. (i.e. always even or always odd).
+\end{itemize}
+
+\end{document}
