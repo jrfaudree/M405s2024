@@ -1,0 +1,69 @@
+% !TEX TS-program = pdflatexmk
+\documentclass[12pt]{article}
+
+% Layout.
+\usepackage[top=.75in, bottom=0.75in, left=.75in, right=.75in, headheight=1in, headsep=6pt]{geometry}
+
+% Fonts.
+\usepackage{mathptmx}
+\usepackage[scaled=0.86]{helvet}
+\renewcommand{\emph}[1]{\textsf{\textbf{#1}}}
+
+% Misc packages.
+\usepackage{amsmath,amssymb,latexsym}
+\usepackage{graphicx,tikz}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{tabularx,colortbl}
+\usepackage{enumitem}
+%to make tikz pics work
+\usepackage{tikz,pgfplots}
+\usetikzlibrary{arrows}
+\newcommand{\midarrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+
+\usepackage[colorlinks=true]{hyperref}
+
+% Paragraph spacing
+\parindent 0pt
+\parskip 6pt plus 1pt
+\def\tableindent{\hskip 0.5 in}
+\def\ts{\hskip 1.5 em}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+\lhead{\large\sf\textbf{MATH 405}}
+\rhead{\large\sf\textbf{Spring 2024}}
+\chead{\large\sf\textbf{HW 4}}
+
+\newcommand{\localhead}[1]{\par\smallskip\textbf{#1}\nobreak\\}%
+\def\heading#1{\localhead{\large\emph{#1}}}
+\def\subheading#1{\localhead{\emph{#1}}}
+
+%% Special Math Symbol shortcuts
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbQ}{\mathbb{Q}}
+
+\newcommand{\rad}{\text{rad}}
+\newcommand{\diam}{\text{diam}}
+
+\usetikzlibrary{calc,arrows.meta}
+\usetikzlibrary{arrows}
+\newcommand{\marrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+
+
+\begin{document}
+For each problem below, $G$ is a group with subgroups $H$ and $K.$\\
+\begin{enumerate}
+\item  Prove that $H \cup K$ is not necessarily a subgroup of $G.$\\
+\textbf{Answer:}\\
+\item Prove that $H \cap K$ is a subgroup of $G.$\\
+\textbf{Proof:}\\
+\item Let $HK=\{hk \, : \, h \in H \text{ and } k \in K \}.$ Prove that $HK$ is not necessarily a subgroup of $G.$\\
+\textbf{Proof:}\\
+\item Let $HK=\{hk \, : \, h \in H \text{ and } k \in K \}.$ Prove that \emph{if $G$ is abelian}, then $HK$ is  a subgroup of $G.$\\
+\textbf{Proof:}\\
+\end{enumerate}
+\end{document}
