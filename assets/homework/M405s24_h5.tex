@@ -1,0 +1,142 @@
+% !TEX TS-program = pdflatexmk
+\documentclass[12pt]{article}
+
+% Layout.
+\usepackage[top=.75in, bottom=0.75in, left=.75in, right=.75in, headheight=1in, headsep=6pt]{geometry}
+
+% Fonts.
+\usepackage{mathptmx}
+\usepackage[scaled=0.86]{helvet}
+\renewcommand{\emph}[1]{\textsf{\textbf{#1}}}
+
+% Misc packages.
+\usepackage{amsmath,amssymb,latexsym}
+\usepackage{graphicx,tikz}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{tabularx,colortbl}
+\usepackage{enumitem}
+%to make tikz pics work
+\usepackage{tikz,pgfplots}
+\usetikzlibrary{arrows}
+\newcommand{\midarrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+
+\usepackage[colorlinks=true]{hyperref}
+
+% Paragraph spacing
+\parindent 0pt
+\parskip 6pt plus 1pt
+\def\tableindent{\hskip 0.5 in}
+\def\ts{\hskip 1.5 em}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+\lhead{\large\sf\textbf{MATH 405}}
+\rhead{\large\sf\textbf{Spring 2024}}
+\chead{\large\sf\textbf{HW 5}}
+
+\newcommand{\localhead}[1]{\par\smallskip\textbf{#1}\nobreak\\}%
+\def\heading#1{\localhead{\large\emph{#1}}}
+\def\subheading#1{\localhead{\emph{#1}}}
+
+%% Special Math Symbol shortcuts
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbQ}{\mathbb{Q}}
+
+\newcommand{\rad}{\text{rad}}
+\newcommand{\diam}{\text{diam}}
+
+\usetikzlibrary{calc,arrows.meta}
+\usetikzlibrary{arrows}
+\newcommand{\marrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+
+
+\begin{document}
+For each problem below, $G$ is a group with subgroups $H$ and $K.$\\
+\begin{enumerate}
+\item 
+	\begin{enumerate}
+	\item List all possible (disjoint) cycle structures of $A_5.$ (Here are some of the questions you should be asking  yourself. Can $A_5$ have a permutation consisting of single 5-cycle? 4-cycle? 3-cycle? ... Can $A_5$ have a permutation consisting of a 3-cycle and a (disjoint) 2-cycle?...)\\
+	\textbf{Answer:}
+	\vfill
+	\item List all possible (disjoint) cycle structures of $A_6.$\\
+	\textbf{Answer:}
+	\vfill
+	\end{enumerate}
+	\newpage
+	
+\item All questions below are about $D_5,$ the 5th dihedral group.
+	\begin{enumerate}
+	\item Write out all the elements of $D_5$ using permutation notation. (Assume the letters $\{1,2,3,4,5\}$ are in cyclic order along the regular $5$-gon.)\\
+	\textbf{Answer:}
+	\vfill
+	\item Make a specific choice of $r$ and $s$ such that every element of $D_5$ can be written in the form $s^ar^b$ in that order for appropriate choice of $a$ and $b.$\\
+	\textbf{Answer:}
+	\vfill
+	\item Using your choice of $r$ and $s$ above write every element of $D_5$  in the form $r^bs^a$ in that order for appropriate choice of $a$ and $b.$\\
+	\textbf{Answer:}
+	\vfill
+	\end{enumerate}
+\newpage
+
+\item Let $G$ be a group and let $a \in G.$ Define $f_a(x): G \to G$ by $f(x)=ax.$ We claim $f$ is a permutation of $G.$
+	\begin{enumerate}
+	\item Assume $G=U(9)=\{1,2,4,5,7,8\}$ and $a=8.$ Describe $f_8(x)$, the permutation of $U(9)$ determined by $8$, using cycle notation.\\
+	 \textbf{Answer:}
+	\vfill
+	\item Prove that for any group $G$ and any $a \in G,$ $f_a(x)$ is a permutation of $G.$ (You should \emph{start} by remembering the definition of a permutation.)\\
+	\textbf{Proof:}
+	\vfill
+	\end{enumerate}
+\newpage
+
+\item For each group $G$ and subgroup $H$, identify all the left and right cosets of $H$ in $G$. Use the notation we used in class. It is sufficient to simple state them. You do not need to give an explanation of your work.\\
+	\begin{enumerate}
+	\item $G=\bbZ,$ $H=3\bbZ$\\
+	\textbf{Answer:} 
+	\vfill
+	\item $G=\bbZ_{12}$, $H=\langle 4 \rangle$\\
+	\textbf{Answer:} 
+	\vfill
+	\item $G=S_4,$ $H=A_4$\\
+	\textbf{Answer:} 
+	\vfill
+	\item  $G=S_4,$ $H=D_4$\\
+	\textbf{Answer:} 
+	\vfill
+	\item $G=S_4,$ $H=\{(),(123),(132)\}$ (Find left cosets only.)\\
+	\textbf{Answer:} 
+	\vfill
+	\item Give an example of a group $G$ and subgroup $H$ of $G$ such that $H$ will have an infinite number of left cosets in $G.$\\
+	\textbf{Answer:} 
+	\vfill
+	\end{enumerate}
+\newpage
+	
+\item Let $G$ be a group, $H$ a subgroup of $G$, and $g_1,g_2 \in G.$ Prove each implication below \emph{using first principles}. This means you can use only definitions. You cannot use Lemma 6.3. (You are proving part of Lemma 6.3 in this problem.)
+	\begin{enumerate}
+	\item Prove that if $g_1H \subseteq g_2H,$ then $g_1H=g_2H.$\\
+	\textbf{Proof:} 
+	\vfill
+	\item Prove that $g_1H = g_2H$ if and only if $g_1^{-1}g_2 \in H.$ (You may use part (a) from this problem.)\\
+	\textbf{Proof:} 
+	\vfill
+	\end{enumerate}
+\newpage
+
+\item Let $G$ be a group and $H$ a subgroup of $G.$ Prove that if $ghg^{-1} \in H,$ for every $g \in G$ and for every $h \in H,$ then $gH=Hg$ for all $g \in G.$ (This is, under the condition $ghg^{-1} \in G,$ left and right cosets are the same. Give a careful argument here. )\\
+\textbf{Proof:} 
+	\vfill
+\newpage
+\item Suppose that $[G : H]=2.$ Prove that for every $a,b \in G\backslash H,$ $ab \in H.$\\
+\textbf{Proof:} 
+	\vfill
+\item Prove that if $[G : H]=2,$ then $gH=Hg$ for every $g \in G.$\\
+\textbf{Proof:} 
+	\vfill
+\newpage
+\end{enumerate}
+\end{document}
