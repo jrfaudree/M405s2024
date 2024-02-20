@@ -1,0 +1,138 @@
+% !TEX TS-program = pdflatexmk
+\documentclass[12pt]{article}
+
+% Layout.
+\usepackage[top=.75in, bottom=0.75in, left=.75in, right=.75in, headheight=1in, headsep=6pt]{geometry}
+
+% Fonts.
+\usepackage{mathptmx}
+\usepackage[scaled=0.86]{helvet}
+\renewcommand{\emph}[1]{\textsf{\textbf{#1}}}
+
+% Misc packages.
+\usepackage{amsmath,amssymb,latexsym}
+\usepackage{graphicx,tikz}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{tabularx,colortbl}
+\usepackage{enumitem}
+%to make tikz pics work
+\usepackage{tikz,pgfplots}
+\usetikzlibrary{arrows}
+\newcommand{\midarrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+
+\usepackage[colorlinks=true]{hyperref}
+
+% Paragraph spacing
+\parindent 0pt
+\parskip 6pt plus 1pt
+\def\tableindent{\hskip 0.5 in}
+\def\ts{\hskip 1.5 em}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+\lhead{\large\sf\textbf{MATH 405}}
+\rhead{\large\sf\textbf{Spring 2024}}
+\chead{\large\sf\textbf{HW 6}}
+
+\newcommand{\localhead}[1]{\par\smallskip\textbf{#1}\nobreak\\}%
+\def\heading#1{\localhead{\large\emph{#1}}}
+\def\subheading#1{\localhead{\emph{#1}}}
+
+%% Special Math Symbol shortcuts
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbQ}{\mathbb{Q}}
+
+\newcommand{\rad}{\text{rad}}
+\newcommand{\diam}{\text{diam}}
+
+\usetikzlibrary{calc,arrows.meta}
+\usetikzlibrary{arrows}
+\newcommand{\marrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+
+
+\begin{document}
+
+\begin{enumerate}
+\item \textbf{Definition:}  The \emph{center} of a group is 
+$$Z(G)=\{g \in G \; | \; gx=xg \text{  for all   } x \in G\}.$$ That is, an element of $G$ is in the center of $G$ if it commutes will all other elements in the group. Find $Z(G)$ for each group below. Bald answers are ok here.
+	\begin{enumerate}
+	\item $G=(\bbZ,+)$\\
+	\textbf{Answer:}
+	\vfill
+	\item $G=S_3$\\
+	\textbf{Answer:}
+	\vfill
+	\item $G=D_6$\\
+	\textbf{Answer:}
+	\vfill
+	\end{enumerate}
+\item Lemma 6.3 tells us that for $H\leq G,$ a group and for any $g_1,g_2 \in G$ the statement $g_1H=g_2H$ is equivalent to $Hg_1^{-1}=Hg_2^{-1}.$ The Lemma does \emph{not} say $g_1H=g_2H$ is equivalent to $Hg_1=Hg_2.$ Why? Either this second equivalence is \emph{implied} or it is false. If it is implied, then prove it. If it is false, prove that.
+
+\textbf{Conclusion:}\\
+
+\textbf{Proof of Conclusion:}\\
+
+	\vfill
+\newpage
+\item Give a detailed proof that every cyclic group of order $n$ is isomorphic to $(\bbZ_n,+).$\\
+
+\textbf{Proof:}\\
+\vfill
+\item Prove or disprove: $U(8) \cong \bbZ_4$\\
+
+\textbf{Proof:}\\
+\vfill
+\newpage
+
+\item Let $G = \bbR \backslash \{-1\}$ with binary operation $*$ defined as 
+$$a*b=a+b+ab.$$
+Recall that in  Homework 2, you proved that $G$ is a group with this operation. Prove that $(G,*) \cong (\bbR^*,\cdot).$\\
+
+\textbf{Proof:}\\
+\vfill
+
+\item Find the order of each of the following elements. Bald answers are acceptable here.\\
+	\begin{enumerate}
+	\item $(3,4)$ in $\bbZ_4 \times \bbZ_6$\\
+	\textbf{Answer:}
+	\vfill
+	\item $(6,15,4)$ in $\bbZ_{30} \times \bbZ_{43} \times \bbZ_{24}$\\
+	\textbf{Answer:}
+	\vfill
+	\item $(5,10,15)$ in $\bbZ_{25} \times \bbZ_{25} \times \bbZ_{25}$\\
+	\textbf{Answer:}
+	\vfill
+	\item $(8,8,8)$ in $\bbZ_{10} \times \bbZ_{24} \times \bbZ_{80}$\\
+	\textbf{Answer:}
+	\vfill
+	\end{enumerate}
+\newpage
+\item 
+	\begin{enumerate}
+	\item Find nontrivial subgroups $H$ and $K$ of $U(9)$ such that $U(9)$ is an internal direct product of $H$ and $K$. Prove your answer is correct.\\
+	\textbf{Answer:} $H=\{\}, \, K=\{\}$\\
+	\textbf{Proof:}
+	\vfill
+	\item Theorem 9.27 says that if $G$ is an internal direct product of $H$ and $K$, then $G$ is \emph{isomorphic} to the external direct product $H \times K.$ Explicitly write all the elements in the group  $H \times K$ along with the associcated group operation(s). Then state explicitly an isomorphism between $G$ and $H \times K.$\\
+	\textbf{Group Elements:} $H \times K=\{\}$\\
+	\textbf{Isomorphism:} Your $f$ goes here.
+	\vfill
+	\end{enumerate}
+\item Prove that $D_4$ cannot be the internal direct product of two of its proper subgroups.\\
+\textbf{Proof:}\\
+\vfill
+\newpage
+\item Let $G$ be a group and $g \in G.$ Define the function $f_g(x) : G \to G$ by $f_g(x)=gxg^{-1}.$ Prove that $f_g$ is an isomorphism from $G$ to itself. (Such a function is called an \emph{automorphism} of $G$.)\\
+\textbf{Proof:}\\
+\vfill
+
+\item Prove that if $G \cong G'$ and $H \cong H'$, then $G \times H \cong G' \times H'.$\\
+
+\textbf{Proof:}\\
+\vfill
+\end{enumerate}
+\end{document}
