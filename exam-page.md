@@ -32,5 +32,11 @@ Links to exams (old and new) will be posted here.
 - Midterm 1
   - Spring 2016 [blank](assets/tests/M405_T1.pdf); [solutions](assets/tests/M405_T1s.pdf)
   - Spring 2017 [blank](assets/tests/M405S17_T1.pdf); [solutions](assets/tests/M405S17_T1-solns.pdf)
+- Midterm 2
+  - Spring 2016 [blank](assets/tests/M405_T2.pdf); [solutions](assets/tests/M405_T2s.pdf)
+  - Spring 2017 [blank](assets/tests/M405S17_T2.pdf); [solutions](assets/tests/M405S17_T2-solns.pdf)
+- Final Exam
+  - Spring 2016 [blank](assets/tests/M405_Final_Exam.pdf); [solutions](assets/tests/M405_Final_Exam-solns.pdf)
+  - Spring 2017 [blank](assets/tests/M405S17_finalexam.pdf); [solutions](assets/tests/M405S17_finalexam-solns.pdf)
 
 
