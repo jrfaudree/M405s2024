@@ -1,0 +1,183 @@
+% !TEX TS-program = pdflatexmk
+\documentclass[12pt]{article}
+
+% Layout.
+\usepackage[top=.75in, bottom=0.75in, left=.75in, right=.75in, headheight=1in, headsep=6pt]{geometry}
+
+% Fonts.
+\usepackage{mathptmx}
+\usepackage[scaled=0.86]{helvet}
+\renewcommand{\emph}[1]{\textsf{\textbf{#1}}}
+
+% Misc packages.
+\usepackage{amsmath,amssymb,latexsym}
+\usepackage{graphicx,tikz}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{tabularx,colortbl}
+\usepackage{enumitem}
+%to make tikz pics work
+\usepackage{tikz,pgfplots}
+\usetikzlibrary{arrows}
+\newcommand{\midarrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+
+\usepackage[colorlinks=true]{hyperref}
+
+% Paragraph spacing
+\parindent 0pt
+\parskip 6pt plus 1pt
+\def\tableindent{\hskip 0.5 in}
+\def\ts{\hskip 1.5 em}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+\lhead{\large\sf\textbf{MATH 405}}
+\rhead{\large\sf\textbf{Spring 2024}}
+\chead{\large\sf\textbf{HW 8}}
+
+\newcommand{\localhead}[1]{\par\smallskip\textbf{#1}\nobreak\\}%
+\def\heading#1{\localhead{\large\emph{#1}}}
+\def\subheading#1{\localhead{\emph{#1}}}
+
+%% Special Math Symbol shortcuts
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbQ}{\mathbb{Q}}
+
+\newcommand{\rad}{\text{rad}}
+\newcommand{\diam}{\text{diam}}
+
+\usetikzlibrary{calc,arrows.meta}
+\usetikzlibrary{arrows}
+\newcommand{\marrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+
+
+\begin{document}
+
+Problems 1 and 2 below use a problem from HW 6 \#9 about \emph{automorphisms} of groups, restated below. You may want to reference the \text{Fact} in your proofs.\\
+
+\textbf{Definition 1:} Let $G$ be a group. An isomorphism $\phi: G \to G$ is called an \emph{automorphism}. (That is, an automorphism is an isomorphism from a group to itself.)\\
+
+\textbf{Fact (that you proved):} Let $G$ be a group and $g \in G.$ The function $f_g: G \to  G$ defined as 
+$$f_g(x)=gxg^{-1}$$ is an automorphism of $G.$\\ 
+
+\textbf{Definition 2:} Let $G$ be a group. An {automorphism} $f:G \to G$ defined by $f_g(x)=gxg^{-1}$ is called an \emph{inner automorphism.} \\
+
+\begin{enumerate}
+%%%PROBLEM 1
+\item 
+	\begin{enumerate}
+	\item Prove that if $G$ is a group with subgroup $H$, then the set $gHg^{-1}=\{ghg^{-1} \, : \, h \in H\}$ is a subgroup of $G.$\\
+	
+	\textbf{Proof:}
+	\vfill
+	
+	\item Prove that if a group $G$ has exactly one subgroup $H$ of order $k,$ than $H$ must be normal in $G.$\\
+	
+	\textbf{Proof:}
+	\vfill
+	\end{enumerate}
+\newpage
+%%%%PROBLEM 2
+\item 
+	\begin{enumerate}
+	\item Let $G=S_3$ and $g=(12).$ Describe the inner automorphism $f_g$ by filling out the table below. (Note that I filled out one row for you.)\\
+	
+	\begin{tabular}{c|c}
+	$x$ & $f_g(x)$ \\
+	\hline
+	$()$ & $(12)()(12)=()$ \\
+	$(12)$ & \\
+	$(13)$ & \\
+	$(23)$ & \\
+	$(123)$ & \\
+	$(132)$ & \\
+	\end{tabular}
+	
+	\item Let $G=\bbZ_3$ and $g=1.$ Describe the inner automorphism $f_g$ by filling out the table below. \\
+	
+	\begin{tabular}{c|c}
+	$x$ & $f_g(x)$ \\
+	\hline
+	$0$ & \\
+	$1$ & \\
+	$2$ & \\
+	\end{tabular}
+		
+	\item If $G$ is abelian, what can you conclude about inner automorphisms of $G$? Justify your answer.\\
+	
+	\textbf{Answer:}
+	\vfill
+	
+	\item Let $G=\bbZ_3.$ Describe an automorphism of $G$ that is not an inner automorphism.\\
+	
+	\begin{tabular}{c|c}
+	$x$ & $f_g(x)$ \\
+	\hline
+	$0$ & \\
+	$1$ & \\
+	$2$ & \\
+	\end{tabular}
+	
+	\item You have shown that some automorphisms can be constructed as inner automorphisms, but not all are of that form. Let $Aut(G)$ be the set of all automorphisms of the group $G.$ Prove that this set forms a group under the operation of function composition. (That is, you are proving that $Aut(G) \leq S_G.$)\\
+	
+	\textbf{Proof:}
+	\vfill
+	
+	\end{enumerate}
+\newpage
+\item Let the function $f: \bbZ_8 \to \bbZ_{20}$ be defined at $f(n)=5n.$ Prove that $f$ is a homomorphism and determine its kernel and its image.\\
+
+\textbf{Proof:}  \\
+	
+\textbf{kernel:}\\
+
+\textbf{image:}\\
+
+\newpage
+\item For each map below, determine if it is a homomorphism. (You don't have to \emph{prove} it is or isn't a homomorphism.) If it is a homomorphism, determine its kernel and its image.
+	\begin{enumerate}
+	\item $\phi: \bbR^* \to GL_2(\bbR)$ defined by $\phi(a)= \begin{pmatrix} 1&0\\0&a \end{pmatrix}.$\\
+	\textbf{Answer:}
+	\vfill
+	\item $\phi: \bbR \to GL_2(\bbR)$ defined by $\phi(a)= \begin{pmatrix} 1&0\\a&1 \end{pmatrix}.$\\
+	\textbf{Answer:}
+	\vfill
+	\item $\phi: GL_2(\bbR) \to  \bbR $ defined by $\phi\left( \, \begin{pmatrix} a&b\\c&d \end{pmatrix} \,\right) =a+d$\\
+	\textbf{Answer:}
+	\vfill
+	\item $\phi: GL_2(\bbR) \to  \bbR^* $ defined by $\phi\left( \, \begin{pmatrix} a&b\\c&d \end{pmatrix} \,\right) =ad-bc$\\
+	\textbf{Answer:}
+	\vfill
+	\item $\phi: \mathbb{M}_2(\bbR) \to  \bbR$ defined by $\phi\left( \, \begin{pmatrix} a&b\\c&d \end{pmatrix} \,\right) =b$ where $\mathbb{M}_2(\bbR)$ is the additive group of $2 \times 2$ matrices with entries in $\bbR.$\\
+	\textbf{Answer:}
+	\vfill
+	\end{enumerate}
+\newpage
+\item Let $A$ be an $m \times n$ matrix. Show that matrix multiplication, $x \to Ax,$ defines a homomorphism $\phi: \bbR^n \mapsto \bbR^m.$\\
+
+\textbf{Proof:}
+	\vfill
+	
+\item If $G$ is an abelian group and $n \in \bbN$, show that $\phi: G \to G$ defined by $g \mapsto g^n$ is a group homomorphism.\\
+
+\textbf{Proof:}
+	\vfill
+\newpage
+\item Show that a homomorphism defined on a cyclic group is completely determine by its action on the generator of the group. \\
+
+\textbf{Proof:}
+	\vfill
+\item If $H$ and $K$ are normal subgroups of $G$ and $H \cap K=\{e\},$ prove that $G$ is isomorphic to a subgroup of $G/H \times G/K.$\\
+
+\textbf{Proof:}
+	\vfill
+
+\end{enumerate}
+\end{document}
+
+
+
+
