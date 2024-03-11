@@ -69,7 +69,7 @@ $$f_g(x)=gxg^{-1}$$ is an automorphism of $G.$\\
 %%%PROBLEM 1
 \item 
 	\begin{enumerate}
-	\item Prove that if $G$ is a group with subgroup $H$, then the set $gHg^{-1}=\{ghg^{-1} \, : \, h \in H\}$ is a subgroup of $G.$\\
+	\item Prove that if $G$ is a group with subgroup $H$ and $g \in G,$ then the set $gHg^{-1}=\{ghg^{-1} \, : \, h \in H\}$ is a subgroup of $G.$\\
 	
 	\textbf{Proof:}
 	\vfill
@@ -128,14 +128,26 @@ $$f_g(x)=gxg^{-1}$$ is an automorphism of $G.$\\
 	
 	\end{enumerate}
 \newpage
-\item Let the function $f: \bbZ_8 \to \bbZ_{20}$ be defined at $f(n)=5n.$ Prove that $f$ is a homomorphism and determine its kernel and its image.\\
 
-\textbf{Proof:}  \\
+%%%Problem 3
+\item Recall that the elements of group $\bbZ_n$ are equivalence classes. Specifically, $\bbZ_8=\{ [0], [1], \dots, [7]\}$ where $[k]=\{k+8n \, : \, n \in \bbZ\}$ even though we often actually write $\bbZ_8=\{0,1,2,\dots, 7\}.$ Similarly, $\bbZ_{20}=\{ [0], [1], \dots, [19]\}$ where $[k]=\{k+20n \, : \, n \in \bbZ\}.$\\
+
+For clarity, you may want to use $[k]_8$ and $[k]_{20}$ to distinguish between whether an equivalence class with representative $k$ is an element in $\bbZ_8$ or $\bbZ_{20}.$
+\begin{enumerate}
+	\item Show that the map $f:\bbZ_8 \to \bbZ_{20}$ defined as $f(k)=4k$ is \emph{not} well-defined. (That is, different representatives of $[k]_8$ may be mapped to different elements of $\bbZ_{20}.$)\\
 	
-\textbf{kernel:}\\
+	\textbf{Answer:} \\
+	
+	\item Show that the map $f:\bbZ_8 \to \bbZ_{20}$ defined as $f(k)=5k$ \emph{is} well-defined. \\
+	
+	\textbf{Answer:} \\
+	
+	\item Prove that the map $f:\bbZ_8 \to \bbZ_{20}$ defined as $f(k)=5k$ is a group homomorphism and determine the kernel and image of $f.$
+	
+\textbf{kernel:} \\
 
 \textbf{image:}\\
-
+\end{enumerate}
 \newpage
 \item For each map below, determine if it is a homomorphism. (You don't have to \emph{prove} it is or isn't a homomorphism.) If it is a homomorphism, determine its kernel and its image.
 	\begin{enumerate}
