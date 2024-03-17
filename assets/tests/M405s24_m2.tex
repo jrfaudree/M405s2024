@@ -1,0 +1,176 @@
+% !TEX TS-program = pdflatexmk
+\documentclass[12pt]{article}
+
+% Layout.
+\usepackage[top=.75in, bottom=0.75in, left=.75in, right=.75in, headheight=1in, headsep=6pt]{geometry}
+
+% Fonts.
+\usepackage{mathptmx}
+%\usepackage[scaled=0.86]{helvet}
+\renewcommand{\emph}[1]{\textsf{\textbf{#1}}}
+\renewcommand{\familydefault}{\sfdefault}
+%Syl adendum
+\usepackage[colorlinks = true,linkcolor = blue, urlcolor  = blue]{hyperref}
+\def\mailto#1{\href{mailto:#1}{#1}}
+
+% Misc packages.
+\usepackage{amsmath,amssymb,latexsym,multicol}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{tabularx,colortbl}
+\usepackage{enumitem}
+%to make tikz pics work
+\usepackage{tikz,pgfplots}
+
+\usepackage[colorlinks=true]{hyperref}
+
+%% Special Math Symbol shortcuts
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbQ}{\mathbb{Q}}
+
+% Paragraph spacing
+\parindent 0pt
+\parskip 6pt plus 1pt
+\def\tableindent{\hskip 0.5 in}
+\def\ts{\hskip 1.5 em}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+\lhead{\large\sf\textbf{MATH 405 }}
+\rhead{\large\sf\textbf{Spring 2024}}
+\chead{\large\sf\textbf{Midterm II}}
+
+\newcommand{\localhead}[1]{\par\smallskip\textbf{#1}\nobreak\\}%
+\def\heading#1{\localhead{\large\emph{#1}}}
+\def\subheading#1{\localhead{\emph{#1}}}
+
+\newenvironment{clist}%
+{\bgroup\parskip 0pt\begin{list}{$\bullet$}{\partopsep 4pt\topsep 0pt\itemsep -2pt}}%
+{\end{list}\egroup}%
+
+\usetikzlibrary{calc}
+\pgfplotsset{my style/.append style={axis x line=middle, axis y line=
+middle, xlabel={$x$}, ylabel={$y$}, axis equal }}
+
+
+\begin{document}
+\quad
+\vskip 2cm
+\strut\vtop{\halign{\emph#\hskip 0.5em\hfil&#\hbox to 2in{\hrulefill}\cr
+\emph{\fontsize{18}{22}\selectfont Name:}&\cr
+\noalign{\vskip 10pt}}}
+
+\vfill
+{\fontsize{18}{22}\selectfont\emph{Rules:}}
+
+You have 1.5 hours to complete this midterm.  
+
+Partial credit will be awarded, but you must show your work.
+
+No notes, books, or other aids are allowed.
+
+Turn off anything that might go beep during the exam.
+
+Good luck!
+\vfill
+\def\emptybox{\hbox to 2em{\vrule height 16pt depth 8pt width 0pt\hfil}}
+\def\tline{\noalign{\hrule}}
+\centerline{\vbox{\offinterlineskip
+{
+\bf\sf\fontsize{18pt}{22pt}\selectfont
+\hrule
+\halign{
+\vrule#&\strut\quad\hfil#\hfil\quad&\vrule#&\quad\hfil#\hfil\quad
+&\vrule#&\quad\hfil#\hfil\quad&\vrule#\cr
+height 3pt&\omit&&\omit&&\omit&\cr
+&Problem&&Possible&&Score&\cr\tline
+height 3pt&\omit&&\omit&&\omit&\cr
+&1&&10&&\emptybox&\cr\tline
+&2&&16&&\emptybox&\cr\tline
+&3&&20&&\emptybox&\cr\tline
+&4&&15&&\emptybox&\cr\tline
+&5&&12&&\emptybox&\cr\tline
+&6&&12&&\emptybox&\cr\tline
+&7&&15&&\emptybox&\cr\tline
+&Extra Credit&&5&&\emptybox&\cr\tline
+&Total&&100&&\emptybox&\cr
+}\hrule}}}
+
+\newpage
+\begin{enumerate}
+\item (10 points) Let $H$ and $K$ be subgroups of the group $G.$ Recall that $HK=\{hk \, : \, h \in H \text{ and } k \in K \}.$ Prove that {if $G$ is abelian}, then $HK \leq G.$\\
+\vfill
+\newpage
+
+\item (16 points) Give an examples of the following, if they exist. Otherwise briefly explain why such examples do not exist.
+	\begin{enumerate}
+	\item a noncyclic group of order 13
+	\vfill
+	\item an infinite group $G$ and element $g \in G,$ such that $|g|$ is finite
+	\vfill
+	\item two nonisomorphic groups of order 18
+	\vfill
+	\item a nonabelian group $G$ and a subgroup $H$ of $G$ such that $H \lhd G$
+	\vfill
+	\end{enumerate}
+\newpage
+
+%%HW 5 #7
+\item (20 points) 
+	\begin{enumerate}
+	\item Suppose that $H$ is a subgroup of the group $G$. Define the \emph{index} of $H$ in $G.$
+	\vspace{1in}
+	\item Give an example of a group $G$ and a \emph{nontrivial} subgroup $H$ such that the index of $H$ in $G$ is 50.
+	\vspace{1in}
+	\item Let $H$ be a subgroup of the group $G.$ Prove that if $[G : H]=2,$ then for every $a,b \in G\backslash H,$ $ab \in H.$\\	
+	\end{enumerate}
+\newpage
+%%HW6 #9
+\item (15 points)  Let $G$ be a group and $g \in G.$ Define the function $f_g(x) : G \to G$ by $f_g(x)=gxg^{-1}.$ Prove that $f_g$ is an isomorphism from $G$ to itself.
+
+\newpage
+%\item (10 point) Let $H$ be a subgroup of the group $G$ and let $a \in G.$ Prove that $aH \leq G$ if and only if $a \in H.$
+
+\vfill
+
+\item (12 points)
+	\begin{enumerate}
+	\item State Lagrange's Theorem
+	\vfill
+	\item Suppose $K$ is a proper subgroup of $H$ and $H$ is a proper subgroup of $G.$ (So $K<H<G.$) If $|K|=10$ and $|G|=200,$ what are the possible orders of $H$? (Or, what are the possible values for $|H|$?) Explain your reasoning.
+	\vfill
+	\end{enumerate}
+\newpage
+\item (12 points)
+	\begin{enumerate}
+	\item State the definition of a \emph{normal subgroup.}
+	\vspace{1in}
+	\item Let $G=GL_2(\bbR)$ and let $H=\{ A \in GL_2(\bbR) \,  : \, \text{det}(A)=2^k \text{ for } k \in \bbZ\}$ be a subgroup of $G.$ Prove that $H \lhd G.$ \\
+	\emph{Note:} You do not need to prove that $H$ is a subgroup of $G.$ You only need to prove that $H$ is normal in $G.$
+	\vfill
+	\end{enumerate}
+
+\newpage
+
+\item (15 points) Let $G=\bbZ_{24}$ and $H=\langle 8 \rangle.$
+	\begin{enumerate}
+	\item In one or two sentences, explain why $H \lhd G.$
+	\vfill
+	\item List the distinct elements of $G/H.$
+	\vfill
+	\item For cosets $10+H$ and $20 +H$, determine $(10+H)+(20+H).$
+	\vfill
+	\item Determine the order of the element $10 + H$ in $G/H.$
+	\vfill
+	\item Can $G/H$ have an element of order 5? If so, find such an element. If not, explain why it is not possible.
+	\vfill
+	\end{enumerate}
+\newpage
+\end{enumerate}
+\emph{Extra Credit:} (5 points) Suppose that $H$ and $K$ are subgroups of the group $G.$ Prove that if there exist elements $a,b \in G$ such that $aH \subseteq bK,$ then $H \subseteq K.$
+
+\end{document}
