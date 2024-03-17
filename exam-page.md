@@ -14,8 +14,8 @@ Links to exams (old and new) will be posted here.
  
 - Midterm 2
   - [review](assets/tests/M405s24_m2_rev.pdf)
-  - [blank](assets/tests/M405s2024_M2.pdf)
-  - [solutions](assets/tests/M405s2024_M2-s.pdf)
+  - [blank](assets/tests/M405s24_m2.pdf)
+  - [solutions](assets/tests/M405s24_m2-s.pdf)
  
 - Midterm 3
   - [review](assets/tests/M405s2024_M3-review.pdf)
