@@ -1,0 +1,252 @@
+% !TEX TS-program = pdflatexmk
+\documentclass[12pt]{article}
+
+% Layout.
+\usepackage[top=.75in, bottom=0.75in, left=.75in, right=.75in, headheight=1in, headsep=6pt]{geometry}
+
+% Fonts.
+\usepackage{mathptmx}
+\usepackage[scaled=0.86]{helvet}
+\renewcommand{\emph}[1]{\textsf{\textbf{#1}}}
+
+% Misc packages.
+\usepackage{amsmath,amssymb,latexsym}
+\usepackage{graphicx,tikz}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{tabularx,colortbl}
+\usepackage{enumitem}
+%to make tikz pics work
+\usepackage{tikz,pgfplots}
+\usetikzlibrary{arrows}
+\newcommand{\midarrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+
+\usepackage[colorlinks=true]{hyperref}
+
+% Paragraph spacing
+\parindent 0pt
+\parskip 6pt plus 1pt
+\def\tableindent{\hskip 0.5 in}
+\def\ts{\hskip 1.5 em}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+\lhead{\large\sf\textbf{MATH 405}}
+\rhead{\large\sf\textbf{Spring 2024}}
+\chead{\large\sf\textbf{HW 9}}
+
+\newcommand{\localhead}[1]{\par\smallskip\textbf{#1}\nobreak\\}%
+\def\heading#1{\localhead{\large\emph{#1}}}
+\def\subheading#1{\localhead{\emph{#1}}}
+
+%% Special Math Symbol shortcuts
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbQ}{\mathbb{Q}}
+
+\newcommand{\rad}{\text{rad}}
+\newcommand{\diam}{\text{diam}}
+
+\usetikzlibrary{calc,arrows.meta}
+\usetikzlibrary{arrows}
+\newcommand{\marrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+
+
+\begin{document}
+\begin{enumerate}
+\item Let $\psi: G \to H$ be a group homomorphism. Prove that $\psi$ is one-to-one if an only if $\psi^{-1}(e_H)=e_G.$\\ \textbf{Hint:} You should use the First Isomorphism Theorem to prove one direction of the if and only if statement.\\
+
+\textbf{Proof:}\\
+
+\vfill
+
+\item Prove that if $G$ is a finite group and $\phi: G \to H$ is a group homomorphism, then $|\phi(G)|$ divides both $|G|$ and $|H|.$\\
+
+\textbf{Proof:}\\
+
+\vfill
+\newpage
+\item Find all of the homomorphisms from $\phi: \mathbb{Z} \to \mathbb{Z}.$ Justify your answer.\\
+\textbf{Hint:} For this problem and the next, you may want to use some facts you proved in HW 8.\\
+
+\textbf{Answer:} \\
+\textbf{Justification:} \\
+\vfill
+
+\item 
+	\begin{enumerate}
+	\item Find all of the automorphisms of $\mathbb{Z}_8$ and explain your reasoning. \\
+
+\textbf{Answer with explanation:}\\
+
+	\item Prove that $\text{Aut}(\mathbb{Z}_8)\cong U(8).$ Recall that $\text{Aut}(G)$ is the group of automorphisms of $G$ under the operation of function composition.\\
+
+\textbf{Proof:}\\
+	\end{enumerate}
+
+\vfill
+
+\item 
+	\begin{enumerate}
+	\item Find all abelian groups of order $n$ for $n \in \{15,16,17,18,19,20\}.$\\
+
+	\textbf{Answer:}\\
+
+	\vfill
+	\item For each nonisomorphic group of order $18$, find an element of order 3.\\
+	
+	\textbf{Answer:}\\
+
+	\vfill
+	\end{enumerate}
+\newpage
+\item Which of the following sets are rings? If it is a ring, does it have a multiplicative identity? Is it commutative? An integral domain? A division ring? What are its units, if any? Is it a field? (You decide your explanations. Speak to your future self!)\\
+	\begin{enumerate}
+	\item $7\mathbb{Z}$ with usual addition and multiplication\\
+	
+	\begin{tabular}{lr}
+	question&answer\\
+	\hline
+	\textbf{a ring?}& Answer here!\\
+	\textbf{with unity?}& Answer here!\\
+	\textbf{commutative?}& Answer here!\\
+	\textbf{an integral domain?}& Answer here!\\
+	\textbf{its units?}& Answer here!\\
+	\textbf{a division ring?}& Answer here!\\
+	\textbf{a field?}& Answer here!\\
+	\end{tabular}
+	\vfill
+	
+	\item $\mathbb{Z}_7$ with usual addition and multiplication\\
+	
+	\begin{tabular}{lr}
+	question&answer\\
+	\hline
+	\textbf{a ring?}&\\
+	\textbf{with unity?}&\\
+	\textbf{commutative?}&\\
+	\textbf{an integral domain?}&\\
+	\textbf{its units?}&\\
+	\textbf{a division ring?}&\\
+	\textbf{a field?}&\\
+	\end{tabular}
+
+	
+	\vfill
+	
+	\item $\mathbb{Z}_{18}$ with usual addition and multiplication\\
+	
+	\begin{tabular}{lr}
+	question&answer\\
+	\hline
+	\textbf{a ring?}&\\
+	\textbf{with unity?}&\\
+	\textbf{commutative?}&\\
+	\textbf{an integral domain?}&\\
+	\textbf{its units?}&\\
+	\textbf{a division ring?}&\\
+	\textbf{a field?}&\\
+	\end{tabular}
+
+	
+	\vfill
+
+	\item $\mathbb{Q}(\sqrt{2})=\{ a+b\sqrt{2} \, :\, a,b \in \mathbb{Q}\}$ with usual addition and multiplication\\
+	
+	\begin{tabular}{lr}
+	question&answer\\
+	\hline
+	\textbf{a ring?}&\\
+	\textbf{with unity?}&\\
+	\textbf{commutative?}&\\
+	\textbf{an integral domain?}&\\
+	\textbf{its units?}&\\
+	\textbf{a division ring?}&\\
+	\textbf{a field?}&\\
+	\end{tabular}
+	
+	\vfill
+	\item $R=\{ a+b\sqrt[3]{2} \, :\, a,b \in \mathbb{Q}\}$ with usual addition and multiplication\\
+	
+	\begin{tabular}{lr}
+	question&answer\\
+	\hline
+	\textbf{a ring?}&\\
+	\textbf{with unity?}&\\
+	\textbf{commutative?}&\\
+	\textbf{an integral domain?}&\\
+	\textbf{its units?}&\\
+	\textbf{a division ring?}&\\
+	\textbf{a field?}&\\
+	\end{tabular}
+
+	
+	\vfill
+	
+	
+	\item $\mathbb{M}_2({\mathbb{Z}_{2}}),$ the set of $2 \times 2$ matrices with entries from $\mathbb{Z}_2$ with usual matrix addition and multiplication\\
+	
+	\begin{tabular}{lr}
+	question&answer\\
+	\hline
+	\textbf{a ring?}&\\
+	\textbf{with unity?}&\\
+	\textbf{commutative?}&\\
+	\textbf{an integral domain?}&\\
+	\textbf{its units?}&\\
+	\textbf{a division ring?}&\\
+	\textbf{a field?}&\\
+	\end{tabular}
+
+	
+	\vfill
+	\item $\mathbb{R}_1[x]=\{ax+b \, : \, a,b \in \mathbb{R}\},$ the set of linear polynomials with real coefficients with the usual addition and multiplication\\
+	
+	\begin{tabular}{lr}
+	question&answer\\
+	\hline
+	\textbf{a ring?}&\\
+	\textbf{with unity?}&\\
+	\textbf{commutative?}&\\
+	\textbf{an integral domain?}&\\
+	\textbf{its units?}&\\
+	\textbf{a division ring?}&\\
+	\textbf{a field?}&\\
+	\end{tabular}
+
+	
+	\vfill
+
+	\item $\mathbb{R}_\infty[x]$ the set of all polynomials with real coefficients with the usual addition and multiplication\\
+	
+	\begin{tabular}{lr}
+	question&answer\\
+	\hline
+	\textbf{a ring?}&\\
+	\textbf{with unity?}&\\
+	\textbf{commutative?}&\\
+	\textbf{an integral domain?}&\\
+	\textbf{its units?}&\\
+	\textbf{a division ring?}&\\
+	\textbf{a field?}&\\
+	\end{tabular}
+
+	
+	\vfill
+	\end{enumerate}
+	
+	
+\end{enumerate}
+\end{document}
+
+	
+	
+	
+	
+	
+	
+
+ 
+
