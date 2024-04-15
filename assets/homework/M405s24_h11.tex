@@ -1,0 +1,103 @@
+% !TEX TS-program = pdflatexmk
+\documentclass[12pt]{article}
+
+% Layout.
+\usepackage[top=.75in, bottom=0.75in, left=.75in, right=.75in, headheight=1in, headsep=6pt]{geometry}
+
+% Fonts.
+\usepackage{mathptmx}
+\usepackage[scaled=0.86]{helvet}
+\renewcommand{\emph}[1]{\textsf{\textbf{#1}}}
+
+% Misc packages.
+\usepackage{amsmath,amssymb,latexsym}
+\usepackage{graphicx,tikz}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{tabularx,colortbl}
+\usepackage{enumitem}
+%to make tikz pics work
+\usepackage{tikz,pgfplots}
+\usetikzlibrary{arrows}
+\newcommand{\midarrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+
+\usepackage[colorlinks=true]{hyperref}
+
+% Paragraph spacing
+\parindent 0pt
+\parskip 6pt plus 1pt
+\def\tableindent{\hskip 0.5 in}
+\def\ts{\hskip 1.5 em}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+\lhead{\large\sf\textbf{MATH 405}}
+\rhead{\large\sf\textbf{Spring 2024}}
+\chead{\large\sf\textbf{HW 11}}
+
+\newcommand{\localhead}[1]{\par\smallskip\textbf{#1}\nobreak\\}%
+\def\heading#1{\localhead{\large\emph{#1}}}
+\def\subheading#1{\localhead{\emph{#1}}}
+
+%% Special Math Symbol shortcuts
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbM}{\mathbb{M}}
+
+
+\newcommand{\rad}{\text{rad}}
+\newcommand{\diam}{\text{diam}}
+
+\usetikzlibrary{calc,arrows.meta}
+\usetikzlibrary{arrows}
+\newcommand{\marrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+
+
+\begin{document}
+\begin{enumerate}
+\item List all distinct polynomials of degree 3 or less in $\bbZ_2.$\\
+
+\item Compute each of the following if $p(x)=5x^2+3x-4$ and $q(x)=4x^2-x+9$ are polynomials in $\bbZ_{12}.$\\
+	\begin{enumerate}
+	\item $p(x)+q(x)$
+	\item $p(x)\cdot q(x)$
+	\item $(p(x))^2$
+	\end{enumerate}
+\item Use the Division Algorithm to find $q(x)$ and $r(x)$ such that $a(x)=q(x)b(x)+r(x)$ where $\text{deg}(r(x)) < \text{deg}(b(x))$ or $r(x)$ is the zero polynomial.\\
+For this problem, it is OK to just state your $q(x)$ and $r(x)$, but you want to make sure you know how to find them. To format the division algorithm in \LaTeX \, is unnecessarily tedious. 
+	\begin{enumerate}
+	\item $a(x)= 5x^3+6x^2-3x+4,$ $b(x)=x-2$,  in the polynomial ring $\bbZ_7[x]$\\
+	\item $a(x)= x^5+x^3-x^2-x,$ $b(x)=x^3+x$,  in the polynomial ring $\bbZ_2[x]$\\
+	\end{enumerate}
+\item Final all zeros for each of the following polynomials or demonstrate that none exist.\\
+	\begin{enumerate}
+	\item $5x^3+4x^2-x+9$ in $\bbZ_{12}[x]$ (Hint: There is an easier way than just testing all 12 possibilities!\\
+	\item $5x^4+2x^2-3$ in $\bbZ_7[x]$\\
+	\item $x^5+x^3+1$ in $\bbZ_2[x]$\\
+	\end{enumerate}
+	
+\item Find a polynomial $p(x)$ in $\bbZ_4$ of degree at least 2 such that $p(x)$ is a unit.\\
+
+\item Give two different factorizations of $x^2+x+8$ in $\bbZ_{10}[x].$\\
+
+\item 
+	\begin{enumerate}
+	\item Give an example of polynomials $a(x)$ and $b(x)$ in $\bbZ[x]$ such that the Division Algorithm fails.\\
+	\item Explain what hypothesis in Theorem 17.6 fails to hold for the polynomials and/or the ring from part (a).\\
+	\end{enumerate} 
+\end{enumerate}
+\end{document}
+
+	
+	
+	
+	
+	
+	
+
+ 
+
