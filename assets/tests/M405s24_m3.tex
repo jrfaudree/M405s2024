@@ -1,0 +1,176 @@
+% !TEX TS-program = pdflatexmk
+\documentclass[12pt]{article}
+
+% Layout.
+\usepackage[top=.75in, bottom=0.75in, left=.75in, right=.75in, headheight=1in, headsep=6pt]{geometry}
+
+% Fonts.
+\usepackage{mathptmx}
+%\usepackage[scaled=0.86]{helvet}
+\renewcommand{\emph}[1]{\textsf{\textbf{#1}}}
+\renewcommand{\familydefault}{\sfdefault}
+%Syl adendum
+\usepackage[colorlinks = true,linkcolor = blue, urlcolor  = blue]{hyperref}
+\def\mailto#1{\href{mailto:#1}{#1}}
+
+% Misc packages.
+\usepackage{amsmath,amssymb,latexsym,multicol}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{tabularx,colortbl}
+\usepackage{enumitem}
+%to make tikz pics work
+\usepackage{tikz,pgfplots}
+
+\usepackage[colorlinks=true]{hyperref}
+
+%% Special Math Symbol shortcuts
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbQ}{\mathbb{Q}}
+
+% Paragraph spacing
+\parindent 0pt
+\parskip 6pt plus 1pt
+\def\tableindent{\hskip 0.5 in}
+\def\ts{\hskip 1.5 em}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+\lhead{\large\sf\textbf{MATH 405 }}
+\rhead{\large\sf\textbf{Spring 2024}}
+\chead{\large\sf\textbf{Midterm III}}
+
+\newcommand{\localhead}[1]{\par\smallskip\textbf{#1}\nobreak\\}%
+\def\heading#1{\localhead{\large\emph{#1}}}
+\def\subheading#1{\localhead{\emph{#1}}}
+
+\newenvironment{clist}%
+{\bgroup\parskip 0pt\begin{list}{$\bullet$}{\partopsep 4pt\topsep 0pt\itemsep -2pt}}%
+{\end{list}\egroup}%
+
+\usetikzlibrary{calc}
+\pgfplotsset{my style/.append style={axis x line=middle, axis y line=
+middle, xlabel={$x$}, ylabel={$y$}, axis equal }}
+
+
+\begin{document}
+\quad
+\vskip 2cm
+\strut\vtop{\halign{\emph#\hskip 0.5em\hfil&#\hbox to 2in{\hrulefill}\cr
+\emph{\fontsize{18}{22}\selectfont Name:}&\cr
+\noalign{\vskip 10pt}}}
+
+\vfill
+{\fontsize{18}{22}\selectfont\emph{Rules:}}
+
+You have 1.5 hours to complete this midterm.  
+
+Partial credit will be awarded, but you must show your work.
+
+No notes, books, or other aids are allowed.
+
+Turn off anything that might go beep during the exam.
+
+Good luck!
+\vfill
+\def\emptybox{\hbox to 2em{\vrule height 16pt depth 8pt width 0pt\hfil}}
+\def\tline{\noalign{\hrule}}
+\centerline{\vbox{\offinterlineskip
+{
+\bf\sf\fontsize{18pt}{22pt}\selectfont
+\hrule
+\halign{
+\vrule#&\strut\quad\hfil#\hfil\quad&\vrule#&\quad\hfil#\hfil\quad
+&\vrule#&\quad\hfil#\hfil\quad&\vrule#\cr
+height 3pt&\omit&&\omit&&\omit&\cr
+&Problem&&Possible&&Score&\cr\tline
+height 3pt&\omit&&\omit&&\omit&\cr
+&1&&16&&\emptybox&\cr\tline
+&2&&20&&\emptybox&\cr\tline
+&3&&16&&\emptybox&\cr\tline
+&4&&12&&\emptybox&\cr\tline
+&5&&12&&\emptybox&\cr\tline
+&6&&24&&\emptybox&\cr\tline
+&Extra Credit&&5&&\emptybox&\cr\tline
+&Total&&100&&\emptybox&\cr
+}\hrule}}}
+
+\newpage
+\begin{enumerate}
+\item Let $G$ and $H$ be groups and let $\phi: G \to H$ be a group homomorphism.
+	\begin{enumerate}
+	\item (2 pts) State the definition of a \emph{group homomorphism}.
+	\vfill
+	\item (2 pts) State the definition of the \emph{kernel of $\phi,$} $\text{ker } \phi.$ 
+	\vfill
+	\item (12 pts) Prove $\text{ker }\phi$ is a normal subgroup of $G.$ (Note that you must show $\text{ker }\phi$ is a subgroup of $G$ \emph{and} that it is normal.)
+	\vspace{6.5in}
+	\end{enumerate}
+\newpage
+%examples
+\item (20 points) Give an examples of the following, if they exist. Otherwise briefly explain why such examples do not exist.
+	\begin{enumerate}
+	\item A commutative ring with unity that is not an integral domain.
+	\vfill
+	\item A ring that is an integral domain but is not a field.
+	\vfill
+	\item A ring $R$ and a nontrivial subring $I$ such that $I$ is an ideal of $R$
+	\vfill
+	\item A ring $R$ and a nontrivial subring $S$ such that $S$ is \emph{not} an ideal of $R$
+	\vfill
+	\item A ring $R$ and an ideal $I$ that is prime.
+	\vfill
+	\end{enumerate}
+\newpage
+
+%%hwk # 9 + First Isom Theorem
+\item (16 points) 
+	\begin{enumerate}
+	\item (4 pts) State the First Isomorphism Theorem (for groups)
+	\vspace{2in}
+	\item (12 pts) Let $\psi: G \to H$ be a group homomorphism. Prove that $\psi$ is one-to-one if and only if $\psi^{-1}(e_H)=\{e_G\}.$\\	
+	\end{enumerate}
+\newpage
+
+\item (12 points) Prove that if $R$ is a field, the only ideals of $R$ are $\{0\}$ and $R$ itself.\\
+\vfill
+
+%
+\item (12 points) Let $R$ be a ring and let $a \in R.$ Prove that the set $S=\{r \in R \, : \, ra=0\}$ is a subring of $R.$ Note that you should not assume $R$ is commutative.\\
+
+\vfill
+\newpage
+%short answer
+\item (24 points) 
+\begin{enumerate}
+	\item List all nonisomorphic abelian groups of order 24.
+	\vfill
+	\item Let $\mathbb{R}$ be the ring of real numbers under the usual operations of addition and multiplication. Explain why the function $f:\mathbb{R} \to \mathbb{R}$ defined as $f(x)=2x+1$ is not ring homomorphism.
+	\vfill
+	\item Find all group homomorphisms from $\mathbb{Z}_{16}$ to $\mathbb{Z}_{18}.$ Your answer(s) must be stated as functions.
+	\vfill
+	\item Give a maximal ideal in the ring $\mathbb{Z}_{20}$
+	\vfill
+\end{enumerate}
+\end{enumerate}
+\newpage
+\emph{Extra Credit:} (5 points) Prove that every finite integral domain is a field.
+\vfill
+
+\end{document}
+
+Let $\mathbb{M}_2(\mathbb{R})$ be the ring of $2 \times 2$ matrices under matrix addition and matrix multiplication.
+	\begin{enumerate}
+	\item What is the additive identity of $\mathbb{M}_2(\mathbb{R})$?
+	\vfill
+	\item Does $\mathbb{M}_2(\mathbb{R})$ have a multiplicative identity? Explain.
+	\vfill
+	\item Does $\mathbb{M}_2(\mathbb{R})$ have any zero divisors?  Explain.
+	\vfill
+	\item What are the units of $\mathbb{M}_2(\mathbb{R})$? Describe them or explain why none exist?
+	\vfill
+	\end{enumerate}

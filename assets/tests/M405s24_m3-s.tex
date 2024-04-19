@@ -1,0 +1,197 @@
+% !TEX TS-program = pdflatexmk
+\documentclass[12pt]{article}
+
+% Layout.
+\usepackage[top=.75in, bottom=0.75in, left=.75in, right=.75in, headheight=1in, headsep=6pt]{geometry}
+
+% Fonts.
+\usepackage{mathptmx}
+%\usepackage[scaled=0.86]{helvet}
+\renewcommand{\emph}[1]{\textsf{\textbf{#1}}}
+\renewcommand{\familydefault}{\sfdefault}
+%Syl adendum
+\usepackage[colorlinks = true,linkcolor = blue, urlcolor  = blue]{hyperref}
+\def\mailto#1{\href{mailto:#1}{#1}}
+
+% Misc packages.
+\usepackage{amsmath,amssymb,latexsym,multicol}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{tabularx,colortbl}
+\usepackage{enumitem}
+%to make tikz pics work
+\usepackage{tikz,pgfplots}
+
+\usepackage[colorlinks=true]{hyperref}
+
+%% Special Math Symbol shortcuts
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbQ}{\mathbb{Q}}
+
+% Paragraph spacing
+\parindent 0pt
+\parskip 6pt plus 1pt
+\def\tableindent{\hskip 0.5 in}
+\def\ts{\hskip 1.5 em}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+\lhead{\large\sf\textbf{MATH 405 }}
+\rhead{\large\sf\textbf{Spring 2024}}
+\chead{\large\sf\textbf{Midterm III}}
+
+\newcommand{\localhead}[1]{\par\smallskip\textbf{#1}\nobreak\\}%
+\def\heading#1{\localhead{\large\emph{#1}}}
+\def\subheading#1{\localhead{\emph{#1}}}
+
+\newenvironment{clist}%
+{\bgroup\parskip 0pt\begin{list}{$\bullet$}{\partopsep 4pt\topsep 0pt\itemsep -2pt}}%
+{\end{list}\egroup}%
+
+\usetikzlibrary{calc}
+\pgfplotsset{my style/.append style={axis x line=middle, axis y line=
+middle, xlabel={$x$}, ylabel={$y$}, axis equal }}
+
+
+\begin{document}
+\quad
+Solutions \\
+
+\begin{enumerate}
+\item Let $G$ and $H$ be groups and let $\phi: G \to H$ be a group homomorphism.
+	\begin{enumerate}
+	\item (2 pts) State the definition of a \emph{group homomorphism}.\\
+	
+	A function $\phi: G \to H$ is a group homomorphism if $\forall a,b \in G,$
+	 $\phi(ab)=\phi (a) \phi(b).$ (or, if you prefer, $\phi(a+b)=\phi (a) + \phi(b).$ \\
+	\vfill
+	\item (2 pts) State the definition of the \emph{kernel of $\phi,$} $\text{ker } \phi.$ \\
+	
+	
+	Given a group homomorphism $\phi: G \to H$, the \emph{kernel of $\phi,$} $\text{ker } \phi,$ is $\phi^{-1}(0_H)$ or the inverse image of the identity in $H$ or the set of elements in $G$ whose image is the identity in $H.$\\
+	
+	\item (12 pts) Prove $\text{ker }\phi$ is a normal subgroup of $G.$ (Note that you must show $\text{ker }\phi$ is a subgroup of $G$ \emph{and} that it is normal.)\\
+	
+	\textbf{Proof:} (\textbf{$\text{ker }\phi$ is a subgroup of $G.$})\\
+	We know that all group  homomorphisms send the identity in the domain to the identity in the range. So $e_G \in \text{ker }\phi$ which implies  $\text{ker }\phi \not = \emptyset.$\\
+	Let $a,b \in \text{ker }\phi.$ Observe \\
+	\begin{tabular}{rlr}
+	$\phi(ab^{-1})$&$=\phi(a)\phi(b^{-1})$& b/c $\phi$ respects the group operation\\
+	&$=\phi(a)( \, \phi(b)\,)^{-1}$& by Prop 11.4\\
+	&$=e_H\cdot (e_H)^{-1}$& b/c $a,b \in \text{ker}\phi$\\
+	&$=e_H$& b/c $e_H$ is the identity.\\
+	\end{tabular}
+	
+	Thus, we have shown that $ab^{-1} \in \text{ker }\phi.$ Thus, by Proposition 3.31, the kernel of $\phi$ is a subgroup of $G.$
+	
+	(\textbf{$\text{ker }\phi$ is normal $G.$})\\
+	 By Theorem 10.3, it is sufficient to demonstrate that $gag^{-1} \in \text{ker }\phi,$ for every $g \in G$ and $a \in \text{ker }\phi.$Observe \\
+	\begin{tabular}{rlr}
+	$\phi(gag^{-1})$&$=\phi(g)\phi(a)\phi(g^{-1})$& b/c $\phi$ respects the group operation\\
+	&$=\phi(g)e_H\phi(g^{-1})$& b/c $a \in \text{ker}\phi$ \\
+	&$=\phi(g)\phi(g)^{-1}$&by Prop 11.4\\
+	&$=e_H$.&\\
+	\end{tabular}
+	
+	Thus, we have shown that $gag^{-1} \in \text{ker }\phi.$\\
+	
+		\end{enumerate}
+\item (20 points) Give an examples of the following, if they exist. Otherwise briefly explain why such examples do not exist.
+	\begin{enumerate}
+	\item A commutative ring with unity that is not an integral domain.\\
+	
+	$\bbZ_6$ (Note any $\bbZ_n$ where $n$ is composite would suffice.)
+	\vfill
+	\item A ring that is an integral domain but is not a field.\\
+	
+	$\bbZ$ or $\bbR[x]$ \\
+	\vfill
+	\item A ring $R$ and a nontrivial subring $I$ such that $I$ is an ideal of $R$\\
+	
+	$R=\bbZ$ and $I=6\bbZ$\\
+	
+	\vfill
+	\item A ring $R$ and a nontrivial subring $S$ such that $S$ is \emph{not} an ideal of $R$\\
+	
+	$R=\bbZ[x]$ and $S=\bbZ$ or $R=\bbR$ and $S=\bbZ$\\
+	\vfill
+	\item A ring $R$ and an ideal $I$ that is prime.\\
+	
+	$R=\bbZ$ and $I=2\bbZ$\\
+	\vfill
+	\end{enumerate}
+%%hwk # 9 + First Isom Theorem
+\item (16 points) 
+	\begin{enumerate}
+	\item (4 pts) State the First Isomorphism Theorem (for groups)
+	Let $f: G \to H$ be a group homomorphism with kernel $K.$ Let $g:G \to G/K$ be the canonical homomorphism. Then there is a unique isomorphism $h: G/K \to f(G)$ such that $f=h \circ g.$\\
+	\item (12 pts) Let $\psi: G \to H$ be a group homomorphism. Prove that $\psi$ is one-to-one if and only if $\psi^{-1}(e_H)=\{e_G\}.$\\	
+	
+	\textbf{Proof:} ($\Longrightarrow$:) Suppose that $\psi$ is one-to-one. Since $\psi$ is a homomorphism, $\psi(e_G)=e_H.$ Since $\psi$ is one-to-one, $\psi$ can map no other element of $G$ to $e_H.$ Thus, $\phi^{-1}(e_H)=\{e_G\}.$\\
+	
+	($\Longleftarrow$:) Suppose $\psi^{-1}(e_H)=\{e_G\}.$ Thus, by the definition of kernel, $\text{ker} \psi = \{e_G\}.$ Since $\text{ker} \psi = \{e_G\},$ it follows that $G \cong G/(\text{ker} \psi ).$ The First Isomorphism Theorem states that $G/(\text{ker} \psi ) \cong \psi(G).$ Thus, $G \cong \psi(G).$ Thus, $\psi$ must be one-to-one.\\
+	\end{enumerate}
+\item (12 points) Prove that if $R$ is a field, the only ideals of $R$ are $\{0\}$ and $R$ itself.\\
+
+\textbf{Proof:} Let $R$ be a field and let $I$ be an ideal in $R$ such that $I \not = \{0\}.$ Since $I \not =\{0\},$ it follows that there exists some $r \in R \backslash \{0\}$ such that $r \in I.$ Since $R$ is a field and $r \not=0,$ there exists a multiplicative inverse, $r^{-1}$, in $R.$ Since $I$ is an ideal, $r^{-1}r=1 \in I.$ Since $1 \in I,$ for every $a \in R,$ $a=a\cdot 1 \in I.$ Thus, $I=R.$
+\vfill
+
+%
+\item (12 points) Let $R$ be a ring and let $a \in R.$ Prove that the set $S=\{r \in R \, : \, ra=0\}$ is a subring of $R.$ Note that you should not assume $R$ is commutative.\\
+
+\textbf{Proof}: (Note that I am using Prop 16.10)\\
+(Show $S \not = \emptyset$.) We know that $0 \cdot a =0.$ Thus, $0 \in S.$\\
+(Show $S$ is closed under multiplication.) Let $x,y \in S.$ Observe\\
+\begin{center}
+\begin{tabular}{rlr}
+$(xy)a$&$=x(ya)$&b/c mult is associative in $R$\\
+&$=x\cdot 0$& b/c $y \in S$\\
+&$=0$.&\\
+\end{tabular} 
+\end{center}
+Thus $xy \in S.$
+
+(Show $x-y \in S,$ $\forall x,y \in S.$) Let $x,y \in S.$ Observe that 
+$$0=0\cdot a = (y+(-y))a=ya+(-y)a=0+(-y)a=(-y)a.$$
+Thus, 
+$$(x-y)a=xa+(-y)a=0+0=0.$$
+Thus, $x-y \in S.$
+
+\vfill
+
+\item (24 points) 
+\begin{enumerate}
+	\item List all nonisomorphic abelian groups of order 24.\\
+	
+	\textbf{answer:} $\bbZ_8 \times \bbZ_3,\; \bbZ_2 \times\bbZ_4 \times \bbZ_3,\; \bbZ_2 \times\bbZ_2 \times\bbZ_2 \times \bbZ_3$
+	\vfill
+	\item Let $\mathbb{R}$ be the ring of real numbers under the usual operations of addition and multiplication. Explain why the function $f:\mathbb{R} \to \mathbb{R}$ defined as $f(x)=2x+1$ is not ring homomorphism.\\
+	
+	\textbf{answer:} Observe that for real numbers $1$ and $2$, $f(1+2)=f(3)=2\cdot 3+1=7,$ but $f(1)+f(2)=2\cdot 1+1+2\cdot 2+1=8.$ Thus $f$ does not respect addition.\\
+	\vfill
+	\item Find all group homomorphisms from $\mathbb{Z}_{16}$ to $\mathbb{Z}_{18}.$ Your answer(s) must be stated as functions.\\
+	
+	\textbf{answer:}  Since $gcd(16,18)=2,$ we know there are two homomorphisms because there are only two divisors of 2, namely 1 and 2.  So,\\
+	option 1: $f(x)=0$ (always a homomorphism)\\
+	and\\
+	option 2: $f(x)=9x$ (b/c $2$ is the only number that divides the orders of both groups, the image of $f$ must have order 2)\\
+	\vfill
+	\item Give a maximal ideal in the ring $\mathbb{Z}_{20}$\\
+	\textbf{answer:} $\langle 2 \rangle$ or $\langle 5 \rangle$ 
+	
+	\vfill
+\end{enumerate}
+\end{enumerate}
+\emph{Extra Credit:} (5 points) Prove that every finite integral domain is a field.\\
+
+\textbf{Proof:} Let $R$ be a finite integral domain. We must show that for every $r \in R\backslash \{0\}$ there exists an element $r^{-1} \in R$ such that $rr^{-1}=1.$ Observe that $1$ is its own inverse.\\
+So let $r \in R\backslash\{0,1\}$ and consider the set $S=\{r^n\, : \, n \in \bbZ^+\}.$  Observe that while $\bbZ^+$ is infinite, the set $S$ must be finite since $S \subset R$ and $R$ is finite. Thus, there exists some $m,n \in \bbZ^+$ such that $m<n$ and $r^m=r^n.$ \\
+Since $R$ is an integral domain, the cancellation law applies. Thus, we can conclude $1=r^{n-m}.$ Since $r \not =1,$ we know $n-m\geq 2.$ Thus, we see that $1=r^{n-m}=r\cdot r^{n-m-1}$ where $n-m-1\geq 1.$ So it follows that $r^{n-m-1}$ is the multiplicative inverse of $r$.
+\vfill
+
+\end{document}
+
