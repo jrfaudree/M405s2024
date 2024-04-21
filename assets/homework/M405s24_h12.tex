@@ -1,0 +1,129 @@
+% !TEX TS-program = pdflatexmk
+\documentclass[12pt]{article}
+
+% Layout.
+\usepackage[top=.75in, bottom=0.75in, left=.75in, right=.75in, headheight=1in, headsep=6pt]{geometry}
+
+% Fonts.
+\usepackage{mathptmx}
+\usepackage[scaled=0.86]{helvet}
+\renewcommand{\emph}[1]{\textsf{\textbf{#1}}}
+
+% Misc packages.
+\usepackage{amsmath,amssymb,latexsym}
+\usepackage{graphicx,tikz}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{tabularx,colortbl}
+\usepackage{enumitem}
+%to make tikz pics work
+\usepackage{tikz,pgfplots}
+\usetikzlibrary{arrows}
+\newcommand{\midarrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+
+\usepackage[colorlinks=true]{hyperref}
+
+% Paragraph spacing
+\parindent 0pt
+\parskip 6pt plus 1pt
+\def\tableindent{\hskip 0.5 in}
+\def\ts{\hskip 1.5 em}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+\lhead{\large\sf\textbf{MATH 405}}
+\rhead{\large\sf\textbf{Spring 2024}}
+\chead{\large\sf\textbf{HW 12}}
+
+\newcommand{\localhead}[1]{\par\smallskip\textbf{#1}\nobreak\\}%
+\def\heading#1{\localhead{\large\emph{#1}}}
+\def\subheading#1{\localhead{\emph{#1}}}
+
+%% Special Math Symbol shortcuts
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbM}{\mathbb{M}}
+
+
+\newcommand{\rad}{\text{rad}}
+\newcommand{\diam}{\text{diam}}
+
+\usetikzlibrary{calc,arrows.meta}
+\usetikzlibrary{arrows}
+\newcommand{\marrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+
+
+\begin{document}
+\begin{enumerate}
+\item For every polynomial of degree 2or 3 in $\bbZ_2$ (see the table below), either factor it completely or state that it is irreducible. \\
+\begin{center}
+\begin{tabular}{lll}
+polynomial & factored form&zeros\\
+\hline \hline
+$x^2$&$x \cdot x$&$x=0$\\
+$x^2+x$&&\\
+$x^2+1$&&\\
+$x^2+x+1$&&\\
+$x^3$&&\\
+$x^3+x^2$&&\\
+$x^3+x^2+x$&&\\
+$x^3+x^2+1$&&\\
+$ x^3+x^2+x+1$&&\\
+$ x^3+x$&&\\
+$x^3+x+1$&&\\
+$x^3+1$&&\\
+\end{tabular}
+\end{center}
+
+\item Prove or Disprove: For every $n \in \{1,2,3,4,5\}$ there exists a polynomial $p(x)$ of degree $n$  with more than $n$ distinct zeros.\\
+
+\begin{center}
+\begin{tabular}{lll}
+degree & polynomial&zeros\\
+\hline \hline
+1&&\\
+2&&\\
+3&&\\
+4&&\\
+5&&\\
+\end{tabular}
+\end{center}
+
+\item Let $I=\langle x^3+2x^2 \rangle$ be an ideal in $\bbQ[x].$\\
+	\begin{enumerate}
+	\item List 5 distinct elements of $\bbQ[x]$ that are in $I,$ list 5 distinct elements of $\bbQ[x]$ that are \emph{not} in $I,$ and then describe in words or symbols what the ideal $I$ looks like. \\
+	
+	\item Is $I$ a maximal ideal? Justify your answer.\\
+	
+	
+	\end{enumerate}
+
+\item Suppose $f(x)$ is irreducible in $F[x]$, where $F$ is a field. Prove that for every nonzero polynomial $g(x) \in F[x],$ either $\text{gcd}(f(x),g(x))=1$ or $f(x) \, \big\vert g(x).$
+
+\item 
+	\begin{enumerate}
+	\item Rewrite Fermat's Little Theorem as stated in your text book.\\
+	
+	\item Show that Fermat's Little Theorem applies for $n=5,$ by explicitly calculating $a^{4}$ for every $a \in \{1,2,3,4\}$ and checking that each is congruent to $1.$\\
+	
+	\item Explain what Fermat's Little Theorem implies about factorizations of $x^p-x$ in $\bbZ_p[x]$ where $p$ is a prime. Prove that your assertion is correct.
+	\end{enumerate}
+	
+\item Show that $\alpha=\sqrt{5}+\sqrt{3}i$ is algebraic over $\bbQ[x]$ by explicitly finding $p(x) \in \bbQ[x]$ such that $p(\alpha)=0.$
+
+\end{enumerate}
+\end{document}
+
+	
+	
+	
+	
+	
+	
+
+ 
+
