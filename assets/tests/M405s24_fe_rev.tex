@@ -1,0 +1,310 @@
+% !TEX TS-program = pdflatexmk
+\documentclass[12pt]{article}
+
+% Layout.
+\usepackage[top=.75in, bottom=0.75in, left=.75in, right=.75in, headheight=1in, headsep=6pt]{geometry}
+
+% Fonts.
+\usepackage{mathptmx}
+\usepackage[scaled=0.86]{helvet}
+\renewcommand{\emph}[1]{\textsf{\textbf{#1}}}
+
+% Misc packages.
+\usepackage{amsmath,amssymb,latexsym}
+\usepackage{graphicx,tikz}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{tabularx,colortbl}
+\usepackage{enumitem}
+%to make tikz pics work
+\usepackage{tikz,pgfplots}
+\usetikzlibrary{arrows}
+\newcommand{\midarrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+
+\usepackage[colorlinks=true]{hyperref}
+
+% Paragraph spacing
+\parindent 0pt
+\parskip 6pt plus 1pt
+\def\tableindent{\hskip 0.5 in}
+\def\ts{\hskip 1.5 em}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+\lhead{\large\sf\textbf{MATH 405}}
+\rhead{\large\sf\textbf{Spring 2024}}
+\chead{\large\sf\textbf{Midterm 3 Review }}
+
+\newcommand{\localhead}[1]{\par\smallskip\textbf{#1}\nobreak\\}%
+\def\heading#1{\localhead{\large\emph{#1}}}
+\def\subheading#1{\localhead{\emph{#1}}}
+
+%% Special Math Symbol shortcuts
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbQ}{\mathbb{Q}}
+
+\newcommand{\rad}{\text{rad}}
+\newcommand{\diam}{\text{diam}}
+\newcommand{\divs}{\, \big | \,}
+
+\newcommand{\bfr}[1]{\textbf{\textcolor{red}{#1}}}
+
+\usetikzlibrary{calc,arrows.meta}
+\usetikzlibrary{arrows}
+\newcommand{\marrow}{\tikz \draw[-triangle 90] (0,0) -- +(.1,0);}
+
+
+\begin{document}
+\textbf{Logistics:}Final Exam will be Thursday May 2 from 1:00-3:00 for in-person students. No notes, books or other aids.\\
+
+\textbf{Reminders:}
+\begin{enumerate}
+	\item Know the \textbf{formal definition}. Intuitive definitions are important for understanding but proofs require the use of the formal definition. If you are unsure of the formal definition, ask; don't guess.
+	\item All proofs should be formal and adhere to the same expectations as your written homework including the use of complete sentences, a clear beginning and conclusion, and appropriate use of symbols.
+	\item Unless explicitly stated otherwise, all answers require a rigorous explanation.
+	\item The final is cumulative and may include questions on any of the material from  Chapters 1-6, 9-11, 13, 16, 17.
+\end{enumerate}
+
+\textbf{Suggestions:}
+\begin{enumerate}
+	\item Read over your commented-on homework. If a problem has a circle around the number, you would not have gotten full-credit for that problem. Do you understand why something is marked as incorrect or missing? How can you not make that mistake again?
+	\item Read over my solutions to the homework. What details in my solutions are absent from yours? Did you and I prove things the same way? If mine was different, does it have any advantages? What are the things from my solutions you want to make sure to include in the future?
+	\item Make a list of all the examples of groups we have discussed thus far. Which are cyclic or not? Abelian or not? Finite or infinite? Which ones are isomorphic to each other?
+	\item Look at old Midterms.
+	\item Look at other problems from the text.
+\end{enumerate}
+
+
+\textbf{Definitions:} equivalence relations, equivalence classes, set operations (intersections, unions, difference, Cartesian product, relations, functions, domain, range, image, one-to-one/injective, onto/surjective, bijective
+
+
+\noindent \textbf{Chapter 2}\\
+
+\textbf{Definitions:} greatest common divisor, least common multiple, relatively prime, Euclidean algorithm, prime number, composite number
+
+\textbf{Notation:} $gcd(m,n)$
+
+\textbf{Results:}
+\begin{itemize}
+	\item Proof by mathematical induction.
+	\item There exist integers $r$ and $s$ such that $ra+sb=gcd(a,b)$
+	\item (Thm 2.9 The Division Algorithm) For every $a,b \in \bbZ$ such that $b >0$ there exist unique $q,r \in \bbZ,$ such that $a=qb+r$ where $0 \leq r <b.$
+	\item (Lemma 2.13) Suppose $a,b \in \bbZ$ and $p$ is a prime. If $p \divs ab$ then $p \divs a$ ore $p \divs b.$
+	\item (Thm 2.15) The prime factorization of an integer is unique up to the order of the primes.
+\end{itemize}
+
+\noindent \textbf{Chapter 3}\\
+
+\textbf{Definitions:} binary operation, associativity, identity, inverse, commutativity, \bfr{group}, order of a group, group of symmetries of an object, addition and multiplication modulo $n$, group of units, general linear group, \bfr{subgroup}, proper subgroup, trivial subgroup
+
+\textbf{Notation:} $(\bbZ,+)$ and with $\bbR,\bbQ,$  $(\bbZ_n,+)$, $(U(n), \cdot )$, $GL_n(\bbR)$, $|G|$, $SL_2(\bbR)$
+
+\textbf{Results:}
+\begin{itemize}
+	\item If $G$ is a group, then
+		\begin{itemize}
+		\item (Prop 3.17) the identity is unique.
+		\item (Prop 3.18) $\forall a \in G,$ $a^{-1}$ is unique.
+		\item (Props 3.19 and 3.20) $\forall a,b \in G,$ $(ab)^{-1}=b^{-1}a^{-1}$ and $(a^{-1})^{-1}=a.$
+		\item (Prop 3.21) $\forall a,b \in G,$ equation $ax=b$ and $xa=b$ have unique solutions.
+		\item (Prop 3.22) $\forall a,b \in G,$ both equations $ab=ac$ and $ba=ca$ imply $b=c.$
+		\end{itemize}
+	\item (Thm 3.23) We can use the usual laws of exponents when manipulating repeated group operations on a single element. Specifically, if $g,h \in G$ a group and $m,n \in \bbZ,$ then
+		\begin{itemize}
+		\item $g^mg^n=g^{m+n}$
+		\item $(g^m)^n=g^{mn}$
+		\item $(gh)^n=((gh)^{-1})^{-n}=(h^{-1}g^{-1})^{-n}$
+		\end{itemize}
+	\item \bfr{$H$ is a subgroup of $G$ if and only if
+		\begin{itemize}
+		\item (Prop 3.30) (i) $e \in H,$ (ii) $h_1h_2 \in H$ for every $h_1,h_2 \in H,$ and (iii) $h^{-1} \in H$ for every $h \in H.$
+		\item (Prop 3.31) (i) $H \not= \emptyset$ and (ii)$gh^{-1} \in H$ for every $g,h \in H.$
+		\end{itemize}}
+\end{itemize}
+
+\noindent \bfr{\textbf{Chapter 4}}\\
+
+\textbf{Definitions:} {Cyclic group, cyclic subgroup, generator of a group, cyclic subgroup generated by $a$, order of an element of a group, abelian group}
+
+\textbf{Notation:} $\langle a \rangle$, $|b|,$ $n \bbZ$
+
+\textbf{Results:}
+\begin{itemize}
+	\item (Thm 4.9) Cyclic groups are abelian.
+	\item (Thm 4.10) Every subgroup of a cyclic group is cyclic.
+	\item (Prop 4.12) If $G=\langle a \rangle$ of order $n$, then $a^k=e$ if and only of $n \divs k.$
+	\item (Thm 4.13)  If $G=\langle a \rangle$ of order $n$ and $b=a^\ell \in G$, then $|b|=\frac{n}{d}$ where $d=gcd(n,\ell).$
+	\item (Cor 4.11 of Prop 4.12) The subgroups of $(\bbZ,+)$ are $\langle 1 \rangle=\bbZ, \, \langle 2 \rangle=2\bbZ, \, \langle 3 \rangle=3\bbZ, \cdots.$
+	\item  (Cor 4.14 of Thm 4.13) Suppose $1 \leq r < n.$ Then,
+	$\bbZ_n=\langle r \rangle$ if and only if $gcd(n,r)=1.$
+\end{itemize}
+
+
+
+\noindent \textbf{Chapter 5 Section 1}\\
+
+\textbf{Definitions} permutation, the symmetric group on $n$ letters, a permutation group, disjoint cycles, transposition, even/odd permutation, length of a permutation.
+
+\textbf{Notation:} $S_X$, $S_n$, permutation notation including disjoint cycle notation and transposition representation,
+
+\textbf{Results}
+\begin{itemize}
+	\item (Thm 5.1)The set of all permutations of the set $X$ under function composition is a group.
+	\item (Prop 5.8) Disjoint cycles permute.
+	\item (Thm 5.9) Every permutation can be written as a product of disjoint cycles.
+	\item (Prop 5.12) Any permutation of a finite set can be written as a product of transpositions, provided the set has at least two elements.
+	\item (Thm 5.15) For every permutation $\sigma,$ the parity (even or odd) of the number of transpositions in any transposition representation of $\sigma$ is fixed. (i.e. always even or always odd).
+\end{itemize}
+
+\noindent \textbf{More Chapter 5}\\
+
+\noindent \textbf{Definitions:} the alternating group, the dihedral group
+
+\noindent \textbf{Notation:} $A_n$, $D_n$
+
+\noindent \textbf{Results:}
+\begin{itemize}
+	\item (Thm 5.16, Prop 5.17) $A_n \leq S_n$ and $|A_n| = \frac{1}{2}|S_n|$
+	\item (Thm 5.20, 5.21) $D_n \leq S_n,$ $|D_n|=2n$ and $D_n$ can be generated by a rotation by $360/n$ and a single reflection.
+\end{itemize}
+
+\noindent \textbf{Chapter 6}\\
+
+\noindent \textbf{Definitions:} left coset, right coset, coset representative,the  \bfr{index} of $H$ in $G,$ \bfr{Lagrange's Theorem}
+
+\noindent \textbf{Notation:} $gH$ and $Hg,$ $[G:H],$
+
+\noindent \textbf{Results:}
+\begin{itemize}
+	\item (Lemma 6.3) $H\leq G$ and $g_1,g_2 \in G$. TFAE
+		\begin{itemize}
+		\item $g_1H=g_2H$
+		\item $Hg_1^{-1}=Hg_2^{-1}$
+		\item $g_1H \subseteq g_2H$
+		\item $g_2 \in g_1H$
+		\item $g_1^{-1}g_2 \in H$
+		\end{itemize}
+	\item (Thm 6.4) Left (right) cosets of $H$ in $G$ partition $G.$
+	\item (Thm 6.8) The number of left cosets of $H$ in $G$ is the same as the number of right cosets of $H$ in $G$. Consequently the notion of the \emph{index} of $H$ is $G$ is well-defined.
+	\item (Prop 6.9) For $H \leq G$ and $g \in G,$ the map $\phi:G \to G$ defined as $\phi(x)=gx$ is a bijection (or, equivalently, $\phi$ defines a permutation of $G$). Consequently, for every $H \leq G$ and $g \in G,$ $|H|=|gH|.$
+	\item (Thm 6.10, Lagrange's Theorem) $H \leq G,$ a finite group. Then
+		\begin{itemize}
+		\item $\frac{|G|}{|H|}=[G:H]$, and
+		\item $|H| \, \Big| \, |G|.$
+		\end{itemize}
+	\item (Cor 6.11, 6.12, 6.13 Consequences of LT) 
+		\begin{itemize}
+		\item $\forall g \in G$ finite, $|g| \, \Big| \, |G|.$
+		\item $\forall G$ such that $|G|=p,$ a prime, $G$ is cyclic.
+		\item If $K \leq H \leq G$ finite, then $[G:K]=[G:H][H:K].$
+		\end{itemize}
+	\item (Prop 6.15 that the converse of LT is false) While $6 \, \Big| \, A_4,$ there does not exist a subgroup of $A_4$ of order 6.
+\end{itemize}
+
+\noindent \textbf{Chapter 9}\\
+
+\noindent \textbf{Definitions:} {group $G$ is isomorphic to group $H$}, external direct product, internal direct product
+
+\noindent \textbf{Notation:} $G \times H$, $G=HK$
+
+\noindent \textbf{Results:}
+	\begin{itemize}
+	\item (Thm 9.6) $\phi: G \to H$ group isomorphism. TFAE
+		\begin{itemize}
+		\item $\phi^{-1}: H \to G$ group isomorphism
+		\item $|G|=|H|$
+		\item If one is abelian, the other is abelian
+		\item If one is cyclic, the other is cyclic
+		\item If one has a subgroup of order $n$, then the other has a subgroup of order $n.$
+		\end{itemize}
+	\item (Thm 9.7, 9.7) All infinite cyclic groups are isomorphic to $\bbZ$ and all cyclic groups of order $n$ are isomorphic to $\bbZ_n.$
+	\item (Cor 9.9) Every group of prime order $p$ is isomorphic to $\bbZ_p.$
+	\item (Thm 9.12 Cayley's Theorem) Every group is isomorphic to a group of permutations.
+	\item (Thm 9.17) Let $g \in G$ and $h \in H$ such that $|g|=r$ and $|h|=s$, then the element $(g,h)$ in the group $G \times H$ has order $lcm(r,s).$
+	\item (Thm 9.27) If $G$ is the internal direct product of $H$ and $K$, then $G$ is isomorphic to $H \times K.$
+	\end{itemize}
+
+\noindent \textbf{Chapter 10}\\
+
+\noindent \textbf{Definitions:} \bfr{normal subgroup}, factor group or quotient group, simple group
+
+\noindent \textbf{Notation:} $N \lhd G$, $G/N$
+
+\noindent \textbf{Results:}
+	\begin{itemize}
+	\item (Thm 10.3) $N \leq G$. TFAE
+		\begin{itemize}
+		\item $N \lhd G$
+		\item $\forall g \in G,$ $gNg^{-1} \subseteq N$
+		\item $\forall g \in G,$ $gNg^{-1} = N$
+		\end{itemize}
+	\item (Thm 10.4) If $N \lhd G,$ then the set of cosets of $N$ in $G$ form a group of order $[G:N]$ with group operation $(aN)(bN)=abN.$
+	\item (Thm 10.11) $A_n$ is simple for $n \geq 5.$
+	\end{itemize}
+
+\noindent \textbf{Chapter 11}\\
+
+\noindent \textbf{Definitions:} \bfr{group homomorphism}, \bfr{group isomorphism}, \bfr{kernel}, the canonical homomorphism, automorphism, the group of automorphisms of a group $G$\\
+
+\noindent \textbf{Notation:} $\text{ker}\phi$\\
+
+\noindent \textbf{Results:} \\
+\begin{enumerate}
+	\item (Proposition 11.4) If $\phi$ is a group homomorphism, then the identity in the domain is mapped to the identity in the range,  $\phi(g^{-1})=(\phi(g))^{-1},$ the image of a subgroup is a subgroup and the inverse image of a subgroup is a subgroup. Moreover, inverse images also preserve normality.
+	\item (Theorem 11.5)  The kernel of a homomorphism is a normal subgroup of the domain group.
+	\item (Theorem 11.10, The First Isomorphism Theorem) If $\psi: G \to H$ is a group homomorphism with kernel $K$ and $\phi$ is the canonical homomorphism, then there exists a unique isomorphism $\eta: G/K \to \phi(G)$ such that $\psi=\eta \circ \phi.$
+\end{enumerate}
+
+\noindent \textbf{Chapter 13}\\
+
+%\noindent \textbf{Definitions:} \\
+%
+%\noindent \textbf{Notation:} \\
+
+\noindent \textbf{Results:} Theorem 13.4 The Fundamental Theorem of Finite Abelian Groups\\
+
+\noindent \textbf{Chapter 16}\\
+
+\noindent \textbf{Definitions:} \bfr{ring}, \bfr{a ring with unity}, a \bfr{commutative ring}, \bfr{integral domain}, division ring, \bfr{unit}, \bfr{field}, \bfr{subring}, Gaussian integers, \bfr{ideal}, \bfr{ring homomorphism}, \bfr{kernel} of a ring homomorphism, \bfr{ring isomorphism},  trivial ideal, \bfr{principal ideal}, factor ring, \bfr{maximal ideal}, \bfr{prime ideal} \\
+
+\noindent \textbf{Notation:} $R/I$\\
+
+\noindent \textbf{Results:} \\
+\begin{enumerate}
+	\item (Prop 16.8) $R$ is a ring with $a,b \in R,$ then (1) $a0=0a=a,$ (2) $a(-b)=(-a)b=-(ab),$ and (3) $(-a)(-b)=ab.$
+	\item (Prop 16.10) $R$ a ring and $S \subseteq R$. We can show that $S$ is a subring of $R$ by demonstrating three things: (1) $S \not = \emptyset$, (2) $\forall a,b \in S, \; ab \in S,$ and (3)  $\forall a,b \in S, \; a-b \in S.$
+	\item  (Prop 16.15 Cancellation Law) If $R$ is a commutative ring with unity, the being an integral domain is equivalent to the existence of a cancellation law. (ie $a \not 0$ and $ab=ac$ implies $b=c$)
+	\item (Thm 16.16) Every finite integral domain is a field.
+	\item (Prop 16.22) Given a ring  homomorphism $f,$ then (1) $f$ preserves commutativity, (2) $f(0)=0,$ (3) $f(1)=1$ provided $f$ is onto, and $f$ preserves being a field provided $f$ is not the trivial homomorphism.
+	\item (Prop 16.27) The kernel of a ring homomorphism is an ideal.
+	\item (Thm 16.29) Let $I$ be an ideal of ring $R.$ The factor group $R/I$ is a ring under the multiplicative operation $(a+I)(b+I)=ab+I.$
+	\item (Thm 16.30) $I$ an ideal of ring $R$ and $f: R \to R/I$ is defined as $f(r)=r+I.$ Then $f$ is a ring homomorphism from $R$ onto $R/I$ with kernel $I.$
+	\item (Thm 16.31) The First (Ring) Isomorphism Theorem. If $\psi: R \to S$ is a group homomorphism with kernel $I$ and $\phi$ is the canonical homomorphism, then there exists a unique isomorphism $\eta: R/I \to \phi(R)$ such that $\psi=\eta \circ \phi.$
+	\item (Thm 16.35) $R$ is commutative with unity and $M$ is an ideal. Then, $M$ is maximal if and only if $R/M$ is a field.
+	\item (Prop 16.38) Suppose $R$ is commutative with unity where $1 \not = 0.$ Then $P$ is prime if and only if $R/P$ is an integral domain.
+\end{enumerate}
+
+\textbf{New Topics}\\
+\noindent \textbf{Chapter 17}\\
+
+\noindent \textbf{Definitions:} polynomial over the ring $R$, coefficient, leading coefficient, monic, degree, \bfr{irreducible}\\
+
+\noindent \textbf{Notation:} $R[x]$\\
+
+\noindent \textbf{Results:} 
+\begin{enumerate}
+	\item (Thm 17.3) If $R$ is commutative with unity, then $R[x]$ is commutative with unity.
+	\item (Thm 17.4) If $R$ is an integral domain, then $R[x]$ is an integral domain and $\forall f(x),g(x) \in R[x],$ $deg(fg)=deg(f)+deg(g).$
+	\item (Thm 17.6) The Division Algorithm
+	\item (Cor 17.8) Let $F$ be a field, $\alpha \in F$, and $p(x) \in F[x].$ \\
+	$$p(\alpha)=0 \Leftrightarrow (x-\alpha) \text{is a factor of }p(x)$$ 
+	\item (Cor 17.9) $F$ field, $p(x) \in F[x]$ of degree $n,$ and $p(x) \not = 0.$ Then $p(x)$ has at most $n$ zeros in $F.$
+	\item (Thm 17.20) If $F$ is a field, then every ideal in $F[x]$ is a principle ideal.
+	\item (Thm 17.22) Let $F$ be a field and $p(x) \in F[x].$ \\
+	$\langle p(x) \rangle$ is maximal $\Leftrightarrow$ $p(x)$ is irreducible.
+\end{enumerate} 
+
+\end{document}
