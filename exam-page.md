@@ -23,7 +23,7 @@ Links to exams (old and new) will be posted here.
   - [solutions](assets/tests/M405s24_m3-s.pdf)
  
 - Final Exam
-  - [review](assets/tests/M405s2024_M3_FE-review.pdf)
+  - [review](assets/tests/M405s24_fe_rev.pdf)
   - [blank]()
   - [solutions]()
  
