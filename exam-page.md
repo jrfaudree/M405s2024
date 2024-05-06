@@ -24,8 +24,8 @@ Links to exams (old and new) will be posted here.
  
 - Final Exam
   - [review](assets/tests/M405s24_fe_rev.pdf)
-  - [blank]()
-  - [solutions]()
+  - [blank](assets/tests/M405s24_fe.pdf)
+  - [solutions](assets/tests/M405s24_fe_s.pdf)
  
 ## Old Exams
 
