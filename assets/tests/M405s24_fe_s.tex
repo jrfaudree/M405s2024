@@ -1,0 +1,217 @@
+% !TEX TS-program = pdflatexmk
+\documentclass[12pt]{article}
+
+% Layout.
+\usepackage[top=.75in, bottom=0.75in, left=.75in, right=.75in, headheight=1in, headsep=6pt]{geometry}
+
+% Fonts.
+\usepackage{mathptmx}
+%\usepackage[scaled=0.86]{helvet}
+\renewcommand{\emph}[1]{\textsf{\textbf{#1}}}
+\renewcommand{\familydefault}{\sfdefault}
+%Syl adendum
+\usepackage[colorlinks = true,linkcolor = blue, urlcolor  = blue]{hyperref}
+\def\mailto#1{\href{mailto:#1}{#1}}
+
+% Misc packages.
+\usepackage{amsmath,amssymb,latexsym,multicol}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{tabularx,colortbl}
+\usepackage{enumitem}
+%to make tikz pics work
+\usepackage{tikz,pgfplots}
+
+\usepackage[colorlinks=true]{hyperref}
+
+%% Special Math Symbol shortcuts
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbQ}{\mathbb{Q}}
+\newcommand{\bbM}{\mathbb{M}}
+
+
+% Paragraph spacing
+\parindent 0pt
+\parskip 6pt plus 1pt
+\def\tableindent{\hskip 0.5 in}
+\def\ts{\hskip 1.5 em}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy} 
+\lhead{\large\sf\textbf{MATH 405 }}
+\rhead{\large\sf\textbf{Spring 2024}}
+\chead{\large\sf\textbf{Final Exam -- Solutions}}
+
+\newcommand{\localhead}[1]{\par\smallskip\textbf{#1}\nobreak\\}%
+\def\heading#1{\localhead{\large\emph{#1}}}
+\def\subheading#1{\localhead{\emph{#1}}}
+
+\newenvironment{clist}%
+{\bgroup\parskip 0pt\begin{list}{$\bullet$}{\partopsep 4pt\topsep 0pt\itemsep -2pt}}%
+{\end{list}\egroup}%
+
+\usetikzlibrary{calc}
+\pgfplotsset{my style/.append style={axis x line=middle, axis y line=
+middle, xlabel={$x$}, ylabel={$y$}, axis equal }}
+
+
+\begin{document}
+\begin{center}{\Large{Solutions}}\end{center}
+\begin{enumerate}
+\item Let $G$ and $H$ be groups and let $\phi: G \to H$ be a group homomorphism.
+	\begin{enumerate}
+	\item ({\small 2 pts}) State the definition of a \emph{group homomorphism}.\\
+	
+	A function $\phi: G \to H$ is a group homomorphism if $\forall a,b \in G,$
+	 $\phi(ab)=\phi (a) \phi(b).$ (or, if you prefer, $\phi(a+b)=\phi (a) + \phi(b).$ \\
+	\vfill
+	\item ({\small 2 pts}) State the definition of the \emph{kernel of $\phi,$} $\text{ker } \phi.$ \\
+	
+	Given a group homomorphism $\phi: G \to H$, the \emph{kernel of $\phi,$} $\text{ker } \phi,$ is $\phi^{-1}(0_H)$ or the inverse image of the identity in $H$ or the set of elements in $G$ whose image is the identity in $H.$\\
+	\vfill
+	\item ({\small 8 pts}) Prove $\text{ker }\phi$ is a normal subgroup of $G.$ (Note that you must show $\text{ker }\phi$ is a subgroup of $G$ \emph{and} that it is normal.)\\
+	
+	\textbf{Proof:} (\textbf{$\text{ker }\phi$ is a subgroup of $G.$})\\
+	We know that all group  homomorphisms send the identity in the domain to the identity in the range. So $e_G \in \text{ker }\phi$ which implies  $\text{ker }\phi \not = \emptyset.$\\
+	Let $a,b \in \text{ker }\phi.$ Observe \\
+	\begin{tabular}{rlr}
+	$\phi(ab^{-1})$&$=\phi(a)\phi(b^{-1})$& b/c $\phi$ respects the group operation\\
+	&$=\phi(a)( \, \phi(b)\,)^{-1}$& by Prop 11.4\\
+	&$=e_H\cdot (e_H)^{-1}$& b/c $a,b \in \text{ker}\phi$\\
+	&$=e_H$& b/c $e_H$ is the identity.\\
+	\end{tabular}
+	
+	Thus, we have shown that $ab^{-1} \in \text{ker }\phi.$ Thus, by Proposition 3.31, the kernel of $\phi$ is a subgroup of $G.$
+	
+	(\textbf{$\text{ker }\phi$ is normal $G.$})\\
+	 By Theorem 10.3, it is sufficient to demonstrate that $gag^{-1} \in \text{ker }\phi,$ for every $g \in G$ and $a \in \text{ker }\phi.$Observe \\
+	\begin{tabular}{rlr}
+	$\phi(gag^{-1})$&$=\phi(g)\phi(a)\phi(g^{-1})$& b/c $\phi$ respects the group operation\\
+	&$=\phi(g)e_H\phi(g^{-1})$& b/c $a \in \text{ker}\phi$ \\
+	&$=\phi(g)\phi(g)^{-1}$&by Prop 11.4\\
+	&$=e_H$.&\\
+	\end{tabular}
+	
+	Thus, we have shown that $gag^{-1} \in \text{ker }\phi.$\\
+
+	\end{enumerate}
+%examples
+\item ({\small18 points}) Give an examples of the following, if they exist. Otherwise, briefly explain why such examples do not exist.
+	\begin{enumerate}
+	\item An infinite nonabelian group.\\
+	
+	$GL_2(\bbR)$\\
+	\vfill
+	\item A nonabelian group of order $n=11.$\\
+	none exist. All groups of prime order are cyclic and therefore abelian.\\
+	\vfill
+	\item An infinite group $G$ with multiple elements of finite order.\\ 
+	
+	$G=Z_6 \times Z$\\ 
+	\vfill
+	\item Three nonisomorphic groups of order 12.\\
+	
+	$D_6$, $\bbZ_4 \times \bbZ_3$, $\bbZ_2 \times \bbZ_2 \times \bbZ_3$
+	\vfill
+	\item A commutative ring with unity that is not an integral domain.\\
+	
+	$\bbZ_6$
+	\vfill
+	\item A ring $R$ and an ideal $I$ such that $I$ is prime.\\
+	$R=\bbZ$ and $I=2\bbZ$
+	\vfill
+	\item A ring $R$ and an ideal $I$ that is maximal in $R$.\\
+	$R=\bbZ$ and $I=2\bbZ$
+	\vfill
+	\item A ring $R$ such that $R[x]$ contains a unit of degree at least 1.\\
+	$R=\bbZ_4$ and $2x+1$ (It is its own inverse.)
+	\vfill
+	\end{enumerate}
+\item ({\small 12 points}) Let $G$ be an abelian group. Let $H=\{ a \in G\, : \, |a| < \infty\}.$ (That is, $H$ consists of all elements of $G$ of finite order.)\\
+
+Prove that $H$ is a subgroup of $G.$\\
+
+\textbf{Proof:} Let $e_G$ be the identity of $G$. Since $|e_G|=1,$ we know that $e_G \in H.$ Thus, $H \not = \emptyset.$\\
+Let $a,b \in H.$ Thus, we know that $|a|=m$ and $|b|=n$ for some $m,n \in \bbZ^+.$ Thus, $|a^{-1}|=n.$ Since $G$ is abelian, $(ab^{-1})^{mn}=a^{mn}b^{-mn}=e_G^me_G^n=e_G.$ Thus, $ab^{-1} \in H.$
+Thus, $H \leq G.$
+
+\item 
+	\begin{enumerate}
+	\item ({\small 4 points}) State Lagrange's Theorem\\
+	Let $G$ be a finite group and let $H$ be a subgroup of $G.$ Then $[G:H]=|G|/|H|$ and, thus, $|H| \, \big\vert \, |G|.$\\
+	\item  ({\small 10 points}) Let $G$ be a group of order $pq$ where $p$ and $q$ are both primes. Prove that every proper subgroup of $G$ is cyclic.\\
+	
+	\textbf{Proof:} Let $G$ be a group of order $pq$ where $p$ and $q$ are both primes. Let $H \leq G$ and $H \not = G.$ By Lagrange's Theorem, $|H|\, \big\vert \, |G|.$ So $|H| \in \{1,p,q\}$. If $|H|=1,$ then $H=\langle e \rangle.$ If $H$ has prime order then since groups of prime order are cyclic, $H$ is cyclic.\\
+	\vfill
+	\end{enumerate}
+
+\item Let $R$ be the ring of functions $f: \bbR \to \bbR$ with the usual operations of addition and multiplication. Let $S$ be the set of differentiable functions in $R.$ (Note: All the functions in $R$, and therefore $S$, have domain $\bbR.$)
+	\begin{enumerate}
+	\item ({\small 10 points}) Prove that $S$ is a subring of $R.$\\
+	
+	\textbf{Proof:} Since $f(x)=1$ is differentiable, $S$ is not empty.  Let $f, g \in S.$ Since $g$ is differentiable, so is $-g.$ Since the sum of two differentiable functions is differentiable, we know $f-g \in S.$ Since the product of two differentiable functions is differentiable, we know $fg \in S.$
+	\vfill
+	\item ({\small 4 points}) Prove that $S$ is \emph{not} an ideal of $R.$
+	
+	\textbf{Proof:} We know $f(x)=1$ is in $S$ and $g(x)=|x|$ is not in $S$. Since $fg=|x|$, we see that $S$ fails the absorption requirement of an ideal.
+	\vfill
+	\end{enumerate}
+%\quad \\
+\item Let $R=\left\{\begin{bmatrix} a&b\\0&c \end{bmatrix} \, : \, a,b,c \in \bbZ \right\}.$ Consider the function $\phi: R \to \bbZ$ defined by $\phi \left( \begin{bmatrix} a&b\\0&c \end{bmatrix} \right)=a.$
+	\begin{enumerate}
+	\item ({\small 10 points}) Prove that $\phi$ is a ring homomorphism.\\
+	
+	\textbf{Proof:} (respects addition)\\
+	Let $\begin{bmatrix} a&b\\0&c \end{bmatrix}, \begin{bmatrix} a'&b'\\0&c' \end{bmatrix} \in \bbM_2(\bbZ).$ Observe \\
+	
+	$\phi \left(\begin{bmatrix} a&b\\0&c \end{bmatrix}+ \begin{bmatrix} a'&b'\\0&c' \end{bmatrix} \right) = 
+	\phi \left(\begin{bmatrix} a+a'&b+b'\\0&c+c' \end{bmatrix} \right)=a+a'=
+	\phi \left(\begin{bmatrix} a&b\\0&c \end{bmatrix}\right)+\phi\left( \begin{bmatrix} a'&b'\\0&c' \end{bmatrix} \right).$\\
+	
+(respects multiplication)\\	
+
+Observe\\
+
+$\phi \left(\begin{bmatrix} a&b\\0&c \end{bmatrix} \begin{bmatrix} a'&b'\\0&c' \end{bmatrix} \right) = 
+	\phi \left(\begin{bmatrix} aa'&bc'+ab'\\0&cc' \end{bmatrix} \right)=aa'=
+	\phi \left(\begin{bmatrix} a&b\\0&c \end{bmatrix}\right)\phi\left( \begin{bmatrix} a'&b'\\0&c' \end{bmatrix} \right).$\\
+
+	\vfill
+	\item ({\small 4 points}) Determine the kernel of $\phi.$\\
+	
+	$\text{ker} \phi =\left\{ \begin{bmatrix} 0&b\\0&c \end{bmatrix} \,\big \vert \, b,c \in \bbZ \right\}.$
+	\vfill
+	\end{enumerate}
+
+\item ({\small{ 4 points each}}) Short Answer
+	\begin{enumerate}
+	\item What is the order of the factor group $\bbZ_{60}/\langle 15 \rangle$?\\
+	15
+	\vfill
+	\item What is the order of the element $10+\langle 15 \rangle$ in the factor group $\bbZ_{60}/\langle 15 \rangle$?\\
+	3
+	\vfill
+	\item Is $2x^4+1$ an element of  $\langle x^2+2 \rangle,$  the ideal generated by $x^2+2$ in $\bbZ_3[x]$? Justify your answer.\\
+	 \textbf{Answer:} Yes. $2x^4+1\in \langle x^2+2 \rangle$ because $(x^2+2)(2x^2+2)=2x^4+6x^2+4=2x^4+1.$
+	\vfill
+	\item Show that the map $f(x)=5x$ is \emph{not} a ring homomorphism from $\bbZ_{12}$ to $\bbZ_{60}.$
+	
+	\textbf{Answer:} $f(1)=5.$ However, $5=f(1 \cdot 1) \not=f(1)f(1)=25.$
+	\vfill
+	\end{enumerate}
+\end{enumerate}
+
+\textbf{5 pts Extra Credit:} Suppose $f(x)$ is irreducible in $F[x]$, where $F$ is a field. Prove that for every nonzero polynomial $g(x) \in F[x],$ either $\text{gcd}(f(x),g(x))=1$ or $f(x) \, \big\vert g(x).$\\
+
+\textbf{Proof:} Suppose $f(x)$ is irreducible in $F[x]$, where $F$ is a field. Thus, by the definition of \emph{irreducible}, $\text{deg}(f(x))\geq 1.$ Let $g(x)$ be a nonzero polynomial in $F[x]$ and let $h(x)=\text{gcd}(f(x),g(x)).$ If $h(x)=1,$ the result holds.
+
+So, suppose $\text{deg}(h(x)) \geq 1.$ From the definition of a greatest common divisor, it follows that $f(x)=h(x)\cdot k(x)$ and $g(x)=h(x)\ell(x)$ for some $k(x),\ell(x) \in F[x].$ Since $f(x)$ is irreducible and $\text{deg}(h(x)) \geq 1,$ it must be the case that $\text{deg}(h(x))=\text{deg}(f(x))$ and $k(x) $ is a unit. Since $k(x) $ is a unit, $F[x]$ contains a multiplicative inverse for $k(x)$, say  $(k(x))^{-1}.$ Thus, $h(x)=f(x)(k(x))^{-1}.$
+
+ Now, we can replace $h(x)$ in the equation $g(x)=h(x)\ell(x)$ to obtain the equation $g(x)=f(x) (k(x))^{-1}\ell(x)$ which demonstrates that $f(x)$ divides $g(x).$
+
+\vspace{3in}
+\end{document}
